@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Part = ({ part }) => {
     return (
@@ -12,7 +13,7 @@ const Part = ({ part }) => {
                 <p>Quantity: {part?.quantity}</p>
                 <p>Minimum Order: {part?.minimumOrder}</p>
                 <div class="card-actions justify-end">
-                    <div class="badge badge-accent cursor-pointer py-4 ">Purchase Now</div>
+                    <Link to={`/order/${part?._id}`} class="badge badge-accent cursor-pointer py-4 ">Purchase Now</Link>
                 </div>
             </div>
         </div>
