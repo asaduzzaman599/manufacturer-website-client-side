@@ -53,7 +53,7 @@ const Purchase = () => {
                     quantity: parseInt(part.quantity) - parseInt(orderQuantity)
                 }).then(data => console.log(data)) */
                 toast.success("Your order placed successfully")
-                navigate('/dashboard/myorders')
+                navigate('/dashboard/myorder')
             }
         })
 

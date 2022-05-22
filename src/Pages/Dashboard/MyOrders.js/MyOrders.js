@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import { privateUrl } from '../../../Api/PrivateApi';
 import CommonTitle from '../../../Components/CommonTitle';
 import { auth } from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
+import DeleteConfirmModal from '../DeleteConfirmModal';
 import Order from './Order';
 
 const MyOrders = () => {
@@ -13,11 +15,25 @@ const MyOrders = () => {
         privateUrl(`/order?email=${user.email}`)
     )
 
+    const [selectedProduct, setSelectedProduct] = useState(null)
+
     if (isLoading) {
         return <Loading></Loading>
     }
 
+    const deleteProduct = () => {
+        if (!user) return
+        privateUrl.delete(`/order/${selectedProduct._id}?email=${user.email}`)
+            .then(({ data }) => {
+                if (data.deletedCount) {
+                    toast.success('Delete successfully')
+                    setSelectedProduct(null)
+                    refetch()
+                } else {
 
+                }
+            }).catch(error => toast.error(error.message))
+    }
     return (
         <div>
             <CommonTitle>My Orders</CommonTitle>
@@ -42,12 +58,18 @@ const MyOrders = () => {
                                 index={index}
                                 order={order}
                                 refetch={refetch}
+                                setSelectedProduct={setSelectedProduct}
                             ></Order>)
                         }
 
                     </tbody>
                 </table>
             </div>
+            {
+                selectedProduct && <DeleteConfirmModal selectedProduct={selectedProduct}>
+                    <button class="btn btn-error" onClick={deleteProduct}>Yes</button>
+                </DeleteConfirmModal>
+            }
         </div>
     );
 };

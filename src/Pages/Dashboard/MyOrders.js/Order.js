@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Order = ({ order, index, refetch }) => {
+const Order = ({ order, index, refetch, setSelectedProduct }) => {
 
     let status;
     if (order.status === "shipped") {
@@ -33,7 +33,9 @@ const Order = ({ order, index, refetch }) => {
                         ? <p>paid</p>
                         : <>
                             <button class="btn btn-sm btn-success mr-2" >Pay Now</button>
-                            <button class="btn btn-sm btn-error" >X</button>
+                            {
+                                <label for="delete-modal" class="btn btn-error modal-button" onClick={() => setSelectedProduct(order)} >X</label>
+                            }
                         </>
                 }
             </td>
