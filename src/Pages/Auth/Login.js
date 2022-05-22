@@ -19,8 +19,9 @@ const Login = () => {
         if (error) {
             console.log(error?.message)
             switch (error?.message) {
-                case '':
-                    // code block
+                case 'Firebase: Error (auth/user-not-found).':
+
+                    toast.error("User not found")
                     break;
 
                 default:

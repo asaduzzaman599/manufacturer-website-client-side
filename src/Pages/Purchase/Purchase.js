@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { baseUrl } from '../../Api/BaseUrl';
+import { privateUrl } from '../../Api/PrivateApi';
 import CommonHeading from '../../Components/CommonHeading';
 import CommonTitle from '../../Components/CommonTitle';
 import { auth } from '../../firebase.init';
@@ -13,6 +15,7 @@ const Purchase = () => {
     const [part, setPart] = useState({})
     const [orderQuantity, setOrderQuantity] = useState('')
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
 
     useEffect(() => {
         baseUrl.get(`/product/${partId}`)
@@ -40,10 +43,19 @@ const Purchase = () => {
             productId: part._id,
             product: part.name,
             orderQuantity,
-            price: +orderQuantity * part.price,
+            unitPrice: parseInt(part.price),
+            totalAmount: parseInt(orderQuantity) * part.price,
         }
-
-        console.log(purchaseOrder)
+        console.log('click')
+        privateUrl.post(`/order?email=${user?.email}`, purchaseOrder).then(({ data }) => {
+            if (data?.result?.insertedId) {
+                /* privateUrl.put(`/product/${part._id}`, {
+                    quantity: parseInt(part.quantity) - parseInt(orderQuantity)
+                }).then(data => console.log(data)) */
+                toast.success("Your order placed successfully")
+                navigate('/dashboard/myorders')
+            }
+        })
 
     }
     return (

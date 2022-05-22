@@ -6,7 +6,7 @@ import { auth } from '../firebase.init';
 const useAdmin = () => {
     const [user] = useAuthState(auth)
     const [admin, setAdmin] = useState(false)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     console.log('hello')
     useEffect(() => {
         if (user) {

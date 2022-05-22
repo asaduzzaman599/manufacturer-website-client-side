@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import CommonHeading from '../../Components/CommonHeading';
 import useAdmin from '../../hooks/useAdmin';
 
@@ -25,7 +25,7 @@ const Dashboard = () => {
                     {
                         !admin &&
                         <>
-                            <li><Link to='/dashboard/myorder'>My Orders</Link></li>
+                            <li><NavLink to='/dashboard/myorder'>My Orders</NavLink></li>
                             <li><Link to='/dashboard/AddReview'>Add A Review</Link></li>
                         </>
                     }
