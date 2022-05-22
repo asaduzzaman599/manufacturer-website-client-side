@@ -17,24 +17,24 @@ const Login = () => {
                         </CommonTitle>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className=''>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="Your Email" class="input input-bordered w-full text-right" {...register("email", { required: true })} />
+                            <input type="text" placeholder="Your Email" className="input input-bordered w-full text-right" {...register("email", { required: true })} />
 
-                            <label class="label">
-                                <span class="label-text-alt  text-error">{errors.email?.type === 'required' && "Email is required"}</span>
+                            <label className="label">
+                                <span className="label-text-alt  text-error">{errors.email?.type === 'required' && "Email is required"}</span>
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="Your Password" class="input input-bordered w-full  text-right" {...register("password", { required: true })} />
+                            <input type="text" placeholder="Your Password" className="input input-bordered w-full  text-right" {...register("password", { required: true })} />
 
-                            <label class="label">
-                                <span class="label-text-alt text-error">{errors.password?.type === 'required' && "Password is required"}</span>
+                            <label className="label">
+                                <span className="label-text-alt text-error">{errors.password?.type === 'required' && "Password is required"}</span>
                             </label>
 
                         </div>

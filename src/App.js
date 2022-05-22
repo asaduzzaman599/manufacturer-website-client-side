@@ -9,6 +9,8 @@ import SignUp from './Pages/Auth/SignUp';
 import Purchase from './Pages/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequiredAuth from './Pages/Auth/RequiredAuth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const routes = [
@@ -23,6 +25,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col justify-between App">
       <Header></Header>
+      <ToastContainer />
       <Routes>
         {
           routes.map(({ id, name, path, Component }) => <Route key={id} path={path} element={<Component />}></Route>)
