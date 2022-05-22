@@ -2,6 +2,7 @@ import { async } from '@firebase/util';
 import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import CommonTitle from '../../Components/CommonTitle';
 import { auth } from '../../firebase.init';
@@ -15,11 +16,12 @@ const SignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const from = '/'
     useEffect(() => {
-        if (!updating) {
-            console.log(updating)
+        if (!updating && token) {
+            Navigate(from)
         }
-    }, [updating])
+    }, [updating, token])
 
     useEffect(() => {
         if (error || updateError) {
@@ -92,7 +94,7 @@ const SignUp = () => {
                         </div>
                         <input type="submit" className='btn btn-primary w-full ' value="Sign Up" />
                     </form>
-                    <SocialLogin></SocialLogin>
+                    <SocialLogin from={from}></SocialLogin>
                 </div>
                 <div className='w-2/6 bg-primary shrink py-10 md:block hidden  '>
                     <div className='flex items-center justify-center h-full'>

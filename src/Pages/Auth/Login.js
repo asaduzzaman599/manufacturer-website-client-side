@@ -7,12 +7,14 @@ import { auth } from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { token } = useToken()
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
-
+    const navigate = useNavigate()
+    const location = useLocation()
     useEffect(() => {
         if (error) {
             console.log(error?.message)
@@ -27,6 +29,13 @@ const Login = () => {
             }
         }
     }, [error])
+    const from = location?.state?.from?.pathname || '/'
+
+    useEffect(() => {
+        if (token) {
+            navigate(from)
+        }
+    }, [token])
 
     const onSubmit = ({ email, password }) => {
         signInWithEmailAndPassword(email, password)
