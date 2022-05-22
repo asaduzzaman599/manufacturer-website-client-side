@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CommonTitle from '../../Components/CommonTitle';
 import SocialLogin from './SocialLogin';
 import { useForm } from "react-hook-form";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase.init';
+import useToken from '../../hooks/useToken';
+import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
+    const { token } = useToken()
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
+    useEffect(() => {
+        if (error) {
+            console.log(error?.message)
+            switch (error?.message) {
+                case '':
+                    // code block
+                    break;
+
+                default:
+                    toast.error("Something went wrong")
+                    break;
+            }
+        }
+    }, [error])
+
+    const onSubmit = ({ email, password }) => {
+        signInWithEmailAndPassword(email, password)
+    };
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
+
     return (
         <div>
             <div className='md:w-4/6 flex mx-auto'>

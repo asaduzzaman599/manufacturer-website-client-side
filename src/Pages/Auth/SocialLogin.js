@@ -5,11 +5,13 @@ import { auth } from '../../firebase.init';
 
 const SocialLogin = ({ from }) => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
     useEffect(() => {
         if (error) {
             toast.error("Something went wrong")
         }
     }, [error])
+
 
     return (
         <div>
