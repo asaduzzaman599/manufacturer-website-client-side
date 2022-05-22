@@ -5,6 +5,7 @@ const Header = () => {
 
     const menuItems = <>
         <li><NavLink to='/'>HOME</NavLink></li>
+        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
         <li><NavLink to='/login'>LOGIN</NavLink></li>
         <li><NavLink to='/signup'>SIGN Up</NavLink></li>
 

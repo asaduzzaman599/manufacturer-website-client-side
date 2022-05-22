@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Auth/Login';
 import SignUp from './Pages/Auth/SignUp';
 import Purchase from './Pages/Purchase/Purchase';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   const routes = [
@@ -25,10 +26,13 @@ function App() {
         {
           routes.map(({ id, name, path, Component }) => <Route key={id} path={path} element={<Component />}></Route>)
         }
-        {
-          /* privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>) */
-          <Route path='/order/:partId' element={<Purchase />}></Route>
-        }
+
+        {/* /* privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>) */}
+        <Route path='/order/:partId' element={<Purchase />}></Route>
+        <Route path='/dashboard' element={<Dashboard />}>
+
+        </Route>
+
       </Routes>
       <Footer></Footer>
     </div>
