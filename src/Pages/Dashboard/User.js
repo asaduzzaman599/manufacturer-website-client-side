@@ -18,7 +18,7 @@ const User = ({ user, index, refetch }) => {
 
     }
     return (
-        <tr key={user._id}>
+        <tr >
             <th>{index + 1}</th>
             <td className='flex items-center gap-4'>
                 <div class="avatar">
