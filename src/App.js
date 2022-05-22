@@ -8,6 +8,7 @@ import Login from './Pages/Auth/Login';
 import SignUp from './Pages/Auth/SignUp';
 import Purchase from './Pages/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import RequiredAuth from './Pages/Auth/RequiredAuth';
 
 function App() {
   const routes = [
@@ -29,9 +30,10 @@ function App() {
 
         {/* /* privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>) */}
         <Route path='/order/:partId' element={<Purchase />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}>
-
+        <Route element={<RequiredAuth></RequiredAuth>}>
+          <Route path='/dashboard' element={<Dashboard />}></Route>
         </Route>
+
 
       </Routes>
       <Footer></Footer>
