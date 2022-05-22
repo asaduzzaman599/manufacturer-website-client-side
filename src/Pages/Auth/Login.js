@@ -1,39 +1,55 @@
 import React from 'react';
 import CommonTitle from '../../Components/CommonTitle';
 import SocialLogin from './SocialLogin';
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
     return (
         <div>
-            <CommonTitle>
-                Login
-            </CommonTitle>
+            <div className='md:w-4/6 flex mx-auto'>
+                <div className='md:w-4/6 mx-auto p-10 shadow-xl'>
 
-            <div className='md:w-2/6 mx-auto p-10 shadow-xl'>
-                <form className=''>
-                    <div class="form-control w-full ">
-                        <label class="label">
-                            <span class="label-text">Email</span>
-                        </label>
-                        <input type="text" placeholder="Your Email" class="input input-bordered w-full text-right" />
-                        <label class="label">
-                            <span class="label-text-alt">Alt label</span>
-                        </label>
+                    <div className="block md:hidden">
+                        <CommonTitle >
+                            Login
+                        </CommonTitle>
                     </div>
-                    <div class="form-control w-full ">
-                        <label class="label">
-                            <span class="label-text">Password</span>
-                        </label>
-                        <input type="text" placeholder="Your Password" class="input input-bordered w-full  text-right" />
-                        <label class="label">
-                            <span class="label-text-alt">Alt label</span>
-                        </label>
+                    <form onSubmit={handleSubmit(onSubmit)} className=''>
+                        <div class="form-control w-full ">
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="text" placeholder="Your Email" class="input input-bordered w-full text-right" {...register("email", { required: true })} />
 
-                    </div>
-                    <input type="submit" className='btn btn-info w-full ' value="Login" />
-                </form>
-                <SocialLogin></SocialLogin>
+                            <label class="label">
+                                <span class="label-text-alt  text-error">{errors.email?.type === 'required' && "Email is required"}</span>
+                            </label>
+                        </div>
+                        <div class="form-control w-full ">
+                            <label class="label">
+                                <span class="label-text">Password</span>
+                            </label>
+                            <input type="text" placeholder="Your Password" class="input input-bordered w-full  text-right" {...register("password", { required: true })} />
+
+                            <label class="label">
+                                <span class="label-text-alt text-error">{errors.password?.type === 'required' && "Password is required"}</span>
+                            </label>
+
+                        </div>
+                        <input type="submit" className='btn btn-info w-full ' value="Login" />
+                    </form>
+                    <SocialLogin></SocialLogin>
+                </div>
+                <div className='w-2/6 bg-info shrink py-10 md:block hidden'>
+
+                    <CommonTitle>
+                        Login
+                    </CommonTitle>
+                </div>
             </div>
+
         </div>
     );
 };
