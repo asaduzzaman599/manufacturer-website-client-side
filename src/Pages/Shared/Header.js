@@ -9,10 +9,13 @@ const Header = () => {
 
     const menuItems = <>
         <li><NavLink to='/'>HOME</NavLink></li>
-        <li><NavLink to='/dashboard'>DASHBOARD</NavLink></li>
         {
             user ?
-                <li><button className='btn btn-ghost' onClick={() => signOut(auth)}>LOGOUT</button></li>
+
+                <>
+                    <li><NavLink to='/dashboard'>DASHBOARD</NavLink></li>
+                    <li><button className='btn btn-ghost' onClick={() => signOut(auth)}>LOGOUT</button></li>
+                </>
                 : <>
                     <li><NavLink to='/login'>LOGIN</NavLink></li>
                     <li><NavLink to='/signup'>SIGN Up</NavLink></li>

@@ -32,9 +32,11 @@ function App() {
         }
 
         {/* /* privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>) */}
-        <Route path='/order/:partId' element={<Purchase />}></Route>
         <Route element={<RequiredAuth></RequiredAuth>}>
-          <Route path='/dashboard' element={<Dashboard />}></Route>
+          <Route path='/order/:partId' element={<Purchase />}></Route>
+          <Route element={<RequiredAuth></RequiredAuth>}>
+            <Route path='/dashboard' element={<Dashboard />}></Route>
+          </Route>
         </Route>
 
 
