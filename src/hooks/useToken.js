@@ -5,11 +5,11 @@ import { auth } from "../firebase.init";
 const useToken = () => {
     const [token, setToken] = useState()
     const [user] = useAuthState(auth)
-
     useEffect(() => {
         if (user) {
             baseUrl.put(`/user/${user?.email}`, { name: user?.displayName, email: user?.email, img: user?.photoURL }).then(({ data }) => {
                 if (data.success) {
+                    localStorage.setItem('access_token', data.accessToken)
                     setToken(data.accessToken)
                 }
             })

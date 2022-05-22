@@ -27,6 +27,7 @@ const ManageProduct = () => {
             .then(({ data }) => {
                 console.log(data)
                 if (data.deletedCount) {
+                    toast.success('Delete successfully')
                     setSelectedProduct(null)
                     refetch()
                 } else {

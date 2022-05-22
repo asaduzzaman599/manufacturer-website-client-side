@@ -5,7 +5,6 @@ import { auth } from '../../firebase.init';
 import noUser from './../../images/no-user.jpg'
 const User = ({ user, index, refetch }) => {
     const [admin] = useAuthState(auth)
-    console.log(user)
     const makeAdmin = () => {
         if (!user) {
             return

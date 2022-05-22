@@ -2,7 +2,7 @@ import { async } from '@firebase/util';
 import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import CommonTitle from '../../Components/CommonTitle';
 import { auth } from '../../firebase.init';
@@ -13,13 +13,15 @@ import SocialLogin from './SocialLogin';
 const SignUp = () => {
     const { token } = useToken()
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate()
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const from = '/'
+
     useEffect(() => {
         if (!updating && token) {
-            Navigate(from)
+            navigate(from)
         }
     }, [updating, token])
 

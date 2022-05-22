@@ -29,8 +29,10 @@ const AddProduct = () => {
                     }
                     privateUrl.post(`/product?email=${user?.email}`, product).then(({ data }) => {
                         console.log(data)
-                        if (data.insertedId) {
+                        if (data?.success) {
                             toast.success("Product Inserted Successfully")
+                        } else {
+                            toast.error("Something went wrong")
                         }
                     })
                 }

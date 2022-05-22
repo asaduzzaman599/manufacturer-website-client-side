@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProduct from './Pages/Dashboard/ManageProduct/ManageProduct';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import RequiredAdmin from './Pages/Auth/RequiredAdmin';
 
 function App() {
   const routes = [
@@ -39,7 +40,7 @@ function App() {
           <Route path='/order/:partId' element={<Purchase />}></Route>
           <Route element={<RequiredAuth></RequiredAuth>}>
             <Route path='/dashboard' element={<Dashboard />}>
-              <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+              <Route path='makeadmin' element={<RequiredAdmin><MakeAdmin></MakeAdmin></RequiredAdmin>}></Route>
               <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
               <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
             </Route>

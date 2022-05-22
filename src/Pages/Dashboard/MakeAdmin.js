@@ -1,18 +1,21 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { baseUrl } from '../../Api/BaseUrl';
 import { privateUrl } from '../../Api/PrivateApi';
+import { auth } from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import User from './User';
 const MakeAdmin = () => {
+
+    const [user, loading] = useAuthState(auth)
     const { isLoading, error, data, refetch } = useQuery('usersData', () =>
-        baseUrl('/user')
+        privateUrl(`/user?email=${user.email}`)
     )
 
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log(data)
 
 
     return (
