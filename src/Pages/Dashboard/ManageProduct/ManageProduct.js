@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import { baseUrl } from '../../../Api/BaseUrl';
 import { privateUrl } from '../../../Api/PrivateApi';
 import CommonTitle from '../../../Components/CommonTitle';
@@ -28,8 +29,10 @@ const ManageProduct = () => {
                 if (data.deletedCount) {
                     setSelectedProduct(null)
                     refetch()
+                } else {
+
                 }
-            })
+            }).catch(error => toast.error(error.message))
     }
     return (
         <div>

@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProduct from './Pages/Dashboard/ManageProduct/ManageProduct';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 function App() {
   const routes = [
@@ -40,6 +41,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />}>
               <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
               <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
+              <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
             </Route>
           </Route>
         </Route>
