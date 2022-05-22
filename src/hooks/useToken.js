@@ -8,7 +8,7 @@ const useToken = () => {
 
     useEffect(() => {
         if (user) {
-            baseUrl.put('/user', { name: user?.displayName, email: user?.email, img: user?.photoURL }).then(({ data }) => {
+            baseUrl.put(`/user/${user?.email}`, { name: user?.displayName, email: user?.email, img: user?.photoURL }).then(({ data }) => {
                 if (data.success) {
                     setToken(data.accessToken)
                 }
