@@ -1,16 +1,29 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import noUser from './../../images/no-user.jpg'
 
-const Reviewcard = () => {
+const Reviewcard = ({ review }) => {
 
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card max-w-lg bg-base-300 shadow-xl">
             <div class="card-body">
-                <h2 class="card-title">Card title!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
+                <div className='flex justify-between'>
+                    <div className='flex justify-start gap-4 items-center'>
+                        <div class="avatar">
+                            <div class="w-12 rounded-full ring ring-base-100 ring-offset-base-100 ">
+                                <img src={review.img || noUser} />
+                            </div>
+                        </div>
+                        <p className='text-secondary-content font-bold text-xl'>{review.name}</p>
+                    </div>
+                    <div>
+                        <p>* * * * *</p>
+                    </div>
                 </div>
+                <div className='text-right'>
+                    <small className='text-primary'>Description</small>
+                    <p className=''>{review.description}</p>
+                </div>
+
             </div>
         </div>
     );
