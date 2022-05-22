@@ -6,7 +6,7 @@ import Footer from './Pages/Shared/Footer';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Auth/Login';
 import SignUp from './Pages/Auth/SignUp';
-import Order from './Pages/OrderPage/Order';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   const routes = [
@@ -16,17 +16,18 @@ function App() {
   ]
 
   const privateRoute = [
-    { id: 1, name: "Order", path: "/order/:partId", Component: Order },
+    { id: 4, name: "Order", path: "/order/:partId", Component: Purchase },
   ]
   return (
     <div className="min-h-screen flex flex-col justify-between App">
       <Header></Header>
       <Routes>
         {
-          routes.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>)
+          routes.map(({ id, name, path, Component }) => <Route key={id} path={path} element={<Component />}></Route>)
         }
         {
-          privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>)
+          /* privateRoute.map(({ id, name, path, Component }) => <Route path={path} element={<Component />}></Route>) */
+          <Route path='/order/:partId' element={<Purchase />}></Route>
         }
       </Routes>
       <Footer></Footer>

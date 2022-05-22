@@ -2,9 +2,9 @@ import React from 'react';
 
 const CommonTitle = ({ children }) => {
     return (
-        <h2 className='text-4xl font-bold text-secondary'>
+        <h3 className='text-2xl font-bold text-secondary'>
             {children}
-        </h2>
+        </h3>
     );
 };
 
