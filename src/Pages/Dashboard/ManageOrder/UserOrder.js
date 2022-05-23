@@ -1,6 +1,7 @@
 import React from 'react';
+import { privateUrl } from '../../../Api/PrivateApi';
 
-const UserOrder = ({ order, index, refetch }) => {
+const UserOrder = ({ order, index, user, refetch }) => {
 
     let status;
     if (order.status === "shipped") {
@@ -10,7 +11,19 @@ const UserOrder = ({ order, index, refetch }) => {
     } else {
         status = <span className='text-error font-semibold'>Unpaid</span>
     }
-    console.log()
+
+
+    const handleShipped = () => {
+        privateUrl.put(`/order/${order._id}?email=${user.email}`, {
+            status: "shipped"
+        }).then(({ data }) => {
+            console.log(data)
+            if (data.modifiedCount) {
+                refetch()
+            }
+        })
+    }
+
     return (
         <tr >
             <th>{index + 1}</th>
@@ -30,7 +43,7 @@ const UserOrder = ({ order, index, refetch }) => {
             </td>
             <td>
                 {
-                    (order?.paid && (order?.status === "pending")) ? <button class="btn btn-sm btn-success mr-2" >Shipped Now</button> : ''
+                    (order?.paid && (order?.status === "pending")) ? <button class="btn btn-sm btn-success mr-2" onClick={handleShipped}>Shipped Now</button> : ''
                 }
                 {
                     order?.paid && order?.status === "Shipped" && <p class="btn btn-sm btn-success mr-2" >Shipped</p>

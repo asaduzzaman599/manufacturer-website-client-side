@@ -37,6 +37,7 @@ const Manageorders = () => {
                             data?.data?.map((order, index) => <UserOrder
                                 key={order._id}
                                 index={index}
+                                user={user}
                                 order={order}
                                 refetch={refetch}
                             ></UserOrder>)
