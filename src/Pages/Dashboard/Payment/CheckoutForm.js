@@ -1,5 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { privateUrl } from '../../../Api/PrivateApi';
 
 const CheckoutForm = ({ user, order }) => {
@@ -7,6 +9,7 @@ const CheckoutForm = ({ user, order }) => {
     const elements = useElements();
     const [error, setError] = useState('')
     const [clientSecret, setClientSecret] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (user) {
@@ -17,7 +20,7 @@ const CheckoutForm = ({ user, order }) => {
         }
     }, [user])
 
-    console.log(clientSecret)
+    console.log(user.displayName)
 
     const handleSubmit = async (event) => {
 
@@ -44,7 +47,31 @@ const CheckoutForm = ({ user, order }) => {
             setError(error.message);
             console.log('[error]', error);
         } else {
-            console.log('[PaymentMethod]', paymentMethod);
+            stripe
+                .confirmCardPayment(clientSecret, {
+                    payment_method: {
+                        card: card,
+                        billing_details: {
+                            name: user?.displayName,
+                            email: user?.email,
+                        },
+                    },
+                })
+                .then(({ paymentIntent }) => {
+                    const payment = {
+                        transactionId: paymentIntent.id,
+                        paid: true,
+                        status: 'pending'
+                    }
+                    console.log(payment)
+                    privateUrl.put(`/order/${order._id}?email=${user.email}`, payment)
+                        .then(({ data }) => {
+                            if (data.modifiedCount) {
+                                navigate('/dashboard/myorder')
+                                toast.success("Payment successfully done")
+                            }
+                        })
+                });
         }
     };
     return (
