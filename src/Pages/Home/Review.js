@@ -15,7 +15,8 @@ const Review = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='mt-12'>
+            <hr />
             <CommonTitle>Customers Review</CommonTitle>
             <div className='grid md:grid-cols-2 w-5/6 mx-auto gap-6'>
                 {

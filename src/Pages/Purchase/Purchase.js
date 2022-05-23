@@ -61,14 +61,18 @@ const Purchase = () => {
     return (
         <div className='container mx-auto'>
             <CommonHeading>Purchase</CommonHeading>
-            <UserInfo user={user}></UserInfo>
-            <div className=' flex'>
+
+            <div className=' flex gap-6 p-6'>
                 {<PartDetail part={part}
                     orderQuantity={orderQuantity}
                     setOrderQuantity={setOrderQuantity}
                 ></PartDetail>
                 }
-                <form onSubmit={handlePurchase} className='p-10 grid gap-4 w-full  flex-1'>
+                <UserInfo user={user}></UserInfo>
+
+            </div>
+            <div >
+                <form onSubmit={handlePurchase} className='p-10 grid gap-4 md:w-2/4 w-4/5 '>
                     <CommonTitle>Please Fillout This</CommonTitle>
                     <input type="text" name="address" placeholder="Address" className="input input-bordered w-full " required />
                     <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full " required />
@@ -82,9 +86,6 @@ const Purchase = () => {
 
 
                 </form>
-            </div>
-            <div >
-
             </div>
         </div>
     );

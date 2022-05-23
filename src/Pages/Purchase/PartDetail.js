@@ -12,7 +12,7 @@ const PartDetail = ({ part, orderQuantity, setOrderQuantity }) => {
 
 
     return (
-        <div className="card card-side bg-base shadow-xl w-2/4 mx-auto  flex-1">
+        <div className="card card-side bg-base  md:w-2/4 mx-auto  flex-1">
             <figure><img src={part.img} alt="Movie" /></figure>
             <div className="card-body text-right">
                 <h2 className="card-title">{part.name}</h2>

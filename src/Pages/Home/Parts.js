@@ -7,7 +7,7 @@ import Part from './Part';
 
 const Parts = () => {
     const { isLoading, error, data: parts } = useQuery('repoData', () =>
-        baseUrl.get('product')
+        baseUrl.get('product?limit=6')
     )
 
     if (isLoading) {

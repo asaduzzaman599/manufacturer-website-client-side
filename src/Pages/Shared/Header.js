@@ -9,6 +9,8 @@ const Header = () => {
 
     const menuItems = <>
         <li><NavLink to='/'>HOME</NavLink></li>
+        <li><NavLink to='/protfolio'>PROTFOLIO</NavLink></li>
+        <li><NavLink to='/blog'>BLOGS</NavLink></li>
         {
             user ?
 
@@ -39,7 +41,7 @@ const Header = () => {
                 <a className="btn btn-ghost normal-case text-xl">Vehicle Portions</a>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal p-0 font-semibold">
 
                     {menuItems}
                 </ul>

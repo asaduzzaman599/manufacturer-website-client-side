@@ -15,14 +15,14 @@ const Part = ({ part }) => {
                 <p className='text-2xl font-bold text-success'>${part?.price} <small className='text-sm'>per unit</small></p>
 
                 <div className='text-right'>
-                    <p className='text-center m-3 text-base-content'>{part?.description}</p>
-                    <p>Quantity: {part?.quantity}</p>
-                    <p>Minimum Order: {part?.minimumOrder}</p>
+                    <p className='text-center m-3 text-base-content'><small>{part?.description}</small></p>
+                    <p><span className='font-bold'>Quantity:</span> {part?.quantity}</p>
+                    <p><span className='font-bold'>Minimum Order:</span> {part?.minimumOrder}</p>
                 </div>
 
             </div>
             <div className="card-actions w-full">
-                <Link to={`/order/${part?._id}`} className=" w-full  badge-info-content font-bold cursor-pointer py-4 hover:btn-info duration-700">Purchase Now</Link>
+                <Link to={`/order/${part?._id}`} className=" w-full  badge-info-content font-bold cursor-pointer py-4 hover:btn-primary duration-700">Purchase Now</Link>
             </div>
         </div>
     );
