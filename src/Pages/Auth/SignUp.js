@@ -18,19 +18,19 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const from = '/'
-
     useEffect(() => {
-        if (!updating && token) {
+        if (token) {
+
             navigate(from)
         }
-    }, [updating, token])
+    }, [token])
 
     useEffect(() => {
         if (error || updateError) {
             console.log(error?.message)
             switch (error?.message) {
-                case '':
-                    // code block
+                case 'Firebase: Error (auth/email-already-in-use).':
+                    toast.error("User already exist")
                     break;
 
                 default:

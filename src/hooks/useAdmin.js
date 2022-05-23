@@ -9,16 +9,26 @@ const useAdmin = () => {
     const [loading, setLoading] = useState(true)
     console.log('hello')
     useEffect(() => {
+
         if (user) {
+
+            console.log(user.email)
             setLoading(true)
             privateUrl.get(`/admin?email=${user?.email}`)
                 .then(({ data }) => {
 
                     setLoading(false)
+
+                    console.log("loading")
                     if (data.success) {
                         setLoading(false)
                         setAdmin(data.admin)
                         console.log(loading)
+                    } else {
+                        console.log("loading")
+                        setLoading(false)
+                        setAdmin(data.admin)
+
                     }
                 }).catch(err => {
                     setLoading(false)

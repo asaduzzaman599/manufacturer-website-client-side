@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const privateUrl = axios.create({
-    baseURL: 'https://vehicle-portion-asaduzzaman599.herokuapp.com/'
+    baseURL: 'http://localhost:5000/'
 });
 
 privateUrl.interceptors.request.use(function (config) {

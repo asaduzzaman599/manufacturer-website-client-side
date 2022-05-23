@@ -4,12 +4,12 @@ import noUser from './../../images/no-user.jpg'
 const Reviewcard = ({ review }) => {
 
     return (
-        <div class="card max-w-lg bg-base-300 shadow-xl">
+        <div class="card max-w-lg  shadow-2xl mb-4">
             <div class="card-body">
                 <div className='flex justify-between'>
                     <div className='flex justify-start gap-4 items-center'>
                         <div class="avatar">
-                            <div class="w-12 rounded-full ring ring-base-100 ring-offset-base-100 ">
+                            <div class="w-12 rounded-full ring ring-info ring-offset-base-100 ">
                                 <img src={review.img || noUser} />
                             </div>
                         </div>
@@ -19,9 +19,10 @@ const Reviewcard = ({ review }) => {
                         <p>* * * * *</p>
                     </div>
                 </div>
-                <div className='text-right'>
-                    <small className='text-primary'>Description</small>
-                    <p className=''>{review.description}</p>
+                <hr />
+                <div className='text-right mt-4'>
+                    <small className='text-primary text-accent'>Description</small>
+                    <p className='w-full py-2 wrap'>{review.description}</p>
                 </div>
 
             </div>

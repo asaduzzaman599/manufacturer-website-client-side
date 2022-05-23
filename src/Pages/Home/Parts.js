@@ -14,7 +14,8 @@ const Parts = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='mt-12'>
+            <hr />
             <CommonTitle>Vehicle Parts We Provide: </CommonTitle>
             <div className='w-4/6 mx-auto grid md:grid-cols-3 gap-6'>
                 {

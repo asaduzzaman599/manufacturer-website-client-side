@@ -8,10 +8,8 @@ const useToken = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
     useEffect(() => {
-        if (!user?.displayName && user) {
-            navigate('/login')
-        }
-        if (user) {
+
+        if (user && user?.displayName) {
             baseUrl.put(`/user/${user?.email}`, { name: user?.displayName, email: user?.email, img: user?.photoURL }).then(({ data }) => {
                 if (data.success) {
                     localStorage.setItem('access_token', data.accessToken)
@@ -19,7 +17,7 @@ const useToken = () => {
                 }
             })
         }
-    }, [user])
+    }, [user, user?.displayName])
 
     return { token }
 };

@@ -61,11 +61,11 @@ const AddReview = () => {
         <div>
             <CommonTitle>Your Reviews</CommonTitle>
 
-            <div className='w-full grid md:grid-cols-2 gap-4 mt-10'>
+            <div className='w-full grid gap-4 mt-10'>
 
                 <div>
 
-                    <div class="card max-w-lg bg-base-100 shadow-xl">
+                    <div class="card max-w-lg bg-base-100 shadow-xl mx-auto">
                         <form onSubmit={handleReview} class="card-body">
                             <h2 class="card-title">Add Review</h2>
                             <label htmlFor="" className='flex justify-between'>
@@ -79,7 +79,7 @@ const AddReview = () => {
                             </label>
                             <input type="range" name="rating" min='1' max='5' />
 
-                            <label htmlFor="" className=' mt-4'>Say somthing</label>
+                            <label htmlFor="" className=' mt-4 font-semibold'>Say somthing</label>
                             <textarea class="input input-bordered w-full h-20 mb-4" name="description" id="" cols="30" rows="10" />
                             {error && <p><small className='text-error'>{error}</small></p>}
 
@@ -90,11 +90,11 @@ const AddReview = () => {
                     </div>
                 </div>
 
-                <div className='grid gap-6'>
+                {/* <div className='grid gap-6'>
                     {
                         data?.data?.map(review => <Reviewcard review={review} key={review._id}></Reviewcard>)
                     }
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -20,6 +20,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import Manageorders from './Pages/Dashboard/ManageOrder/Manageorders';
 import Payment from './Pages/Dashboard/Payment/Payment';
+import RequiredUser from './Pages/Auth/RequiredUser';
 
 function App() {
   const routes = [
@@ -48,13 +49,13 @@ function App() {
               <Route index element={<MyProfile></MyProfile>}></Route>
 
               <Route path='makeadmin' element={<RequiredAdmin><MakeAdmin></MakeAdmin></RequiredAdmin>}></Route>
-              <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
-              <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
-              <Route path='manageorder' element={<Manageorders></Manageorders>}></Route>
+              <Route path='manageproducts' element={<RequiredAdmin><ManageProduct></ManageProduct></RequiredAdmin>}></Route>
+              <Route path='addproduct' element={<RequiredAdmin><AddProduct></AddProduct></RequiredAdmin>}></Route>
+              <Route path='manageorder' element={<RequiredAdmin><Manageorders></Manageorders></RequiredAdmin>}></Route>
 
 
-              <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
-              <Route path='addreview' element={<AddReview></AddReview>}></Route>
+              <Route path='myorder' element={<RequiredUser><MyOrders></MyOrders></RequiredUser>}></Route>
+              <Route path='addreview' element={<RequiredUser><AddReview></AddReview></RequiredUser>}></Route>
               <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
               <Route path='payment/:orderId' element={<Payment></Payment>}></Route>
 
