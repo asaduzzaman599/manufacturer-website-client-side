@@ -6,8 +6,9 @@ import { privateUrl } from '../../../Api/PrivateApi';
 import CommonTitle from '../../../Components/CommonTitle';
 import { auth } from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
-import DeleteConfirmModal from '../DeleteConfirmModal';
+import DeleteConfirmModal from '../ManageProduct/DeleteConfirmModal';
 import Order from './Order';
+import OrderDeleteConfirmModal from './OrderDeleteConfirmModal';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth)
@@ -15,7 +16,7 @@ const MyOrders = () => {
         privateUrl(`/order?email=${user.email}`)
     )
 
-    const [selectedProduct, setSelectedProduct] = useState(null)
+    const [selectedOrder, setSelectedOrder] = useState(null)
 
     if (isLoading) {
         return <Loading></Loading>
@@ -23,17 +24,18 @@ const MyOrders = () => {
 
     const deleteProduct = () => {
         if (!user) return
-        privateUrl.delete(`/order/${selectedProduct._id}?email=${user.email}`)
+        privateUrl.delete(`/order/${selectedOrder._id}?email=${user.email}`)
             .then(({ data }) => {
                 if (data.deletedCount) {
                     toast.success('Delete successfully')
-                    setSelectedProduct(null)
+                    setSelectedOrder(null)
                     refetch()
                 } else {
 
                 }
             }).catch(error => toast.error(error.message))
     }
+
     return (
         <div>
             <CommonTitle>My Orders</CommonTitle>
@@ -54,11 +56,11 @@ const MyOrders = () => {
                     <tbody>
                         {
                             data.data.map((order, index) => <Order
-                                key={user._id}
+                                key={order._id}
                                 index={index}
                                 order={order}
                                 refetch={refetch}
-                                setSelectedProduct={setSelectedProduct}
+                                setSelectedProduct={setSelectedOrder}
                             ></Order>)
                         }
 
@@ -66,9 +68,9 @@ const MyOrders = () => {
                 </table>
             </div>
             {
-                selectedProduct && <DeleteConfirmModal selectedProduct={selectedProduct}>
+                selectedOrder && <OrderDeleteConfirmModal selectedOrder={selectedOrder}>
                     <button class="btn btn-error" onClick={deleteProduct}>Yes</button>
-                </DeleteConfirmModal>
+                </OrderDeleteConfirmModal>
             }
         </div>
     );

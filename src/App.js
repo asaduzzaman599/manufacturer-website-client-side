@@ -18,6 +18,8 @@ import RequiredAdmin from './Pages/Auth/RequiredAdmin';
 import MyOrders from './Pages/Dashboard/MyOrders.js/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import Manageorders from './Pages/Dashboard/ManageOrder/Manageorders';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 function App() {
   const routes = [
@@ -48,11 +50,13 @@ function App() {
               <Route path='makeadmin' element={<RequiredAdmin><MakeAdmin></MakeAdmin></RequiredAdmin>}></Route>
               <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
               <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+              <Route path='manageorder' element={<Manageorders></Manageorders>}></Route>
 
 
               <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
               <Route path='addreview' element={<AddReview></AddReview>}></Route>
               <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+              <Route path='payment/:orderId' element={<Payment></Payment>}></Route>
 
             </Route>
           </Route>

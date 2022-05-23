@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Order = ({ order, index, refetch, setSelectedProduct }) => {
+const UserOrder = ({ order, index, refetch }) => {
 
     let status;
     if (order.status === "shipped") {
@@ -11,6 +10,7 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
     } else {
         status = <span className='text-error font-semibold'>Unpaid</span>
     }
+    console.log()
     return (
         <tr >
             <th>{index + 1}</th>
@@ -21,7 +21,7 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
                         <img src={user?.img || noUser} />
                     </div>
                 </div> */}
-                {order?.product}</td>
+                {order?.name}</td>
             <td>{order?.orderQuantity}</td>
             <td>{order.unitPrice}</td>
             <td>{order.totalAmount}</td>
@@ -30,18 +30,16 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
             </td>
             <td>
                 {
-                    order?.paid
-                        ? <p>paid</p>
-                        : <>
-                            <Link to={`/dashboard/payment/${order._id}`} class="btn btn-sm btn-success mr-2" >Pay Now</Link>
-                            {
-                                <label for="delete-order-modal" class="btn btn-error modal-button" onClick={() => setSelectedProduct(order)} >X</label>
-                            }
-                        </>
+                    (order?.paid && (order?.status === "pending")) ? <button class="btn btn-sm btn-success mr-2" >Shipped Now</button> : ''
                 }
+                {
+                    order?.paid && order?.status === "Shipped" && <p class="btn btn-sm btn-success mr-2" >Shipped</p>
+                }
+
+
             </td>
         </tr>
     );
 };
 
-export default Order;
+export default UserOrder;

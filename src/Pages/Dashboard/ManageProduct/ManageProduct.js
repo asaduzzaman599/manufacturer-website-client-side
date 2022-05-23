@@ -7,7 +7,7 @@ import { privateUrl } from '../../../Api/PrivateApi';
 import CommonTitle from '../../../Components/CommonTitle';
 import { auth } from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
-import DeleteConfirmModal from '../DeleteConfirmModal';
+import DeleteConfirmModal from './DeleteConfirmModal';
 import Product from './Product';
 
 const ManageProduct = () => {
