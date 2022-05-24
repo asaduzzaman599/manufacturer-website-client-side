@@ -22,6 +22,8 @@ import Manageorders from './Pages/Dashboard/ManageOrder/Manageorders';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import RequiredUser from './Pages/Auth/RequiredUser';
 import NotFound from './Pages/Shared/NotFound';
+import Protfolio from './Pages/Protfolio';
+import Blogs from './Pages/Blogs';
 
 function App() {
   const routes = [
@@ -64,10 +66,13 @@ function App() {
           </Route>
         </Route>
 
+        <Route path='/protfolio' element={<Protfolio />}></Route>
+        <Route path='blog' element={<Blogs />}></Route>
         <Route path='*' element={<NotFound />}></Route>
 
       </Routes>
       <Footer></Footer>
+
     </div>
   );
 }

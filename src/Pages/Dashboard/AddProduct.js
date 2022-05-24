@@ -8,7 +8,7 @@ import { auth } from '../../firebase.init';
 
 const AddProduct = () => {
     const [user] = useAuthState(auth)
-    const { register, handleSubmit, watch, formState } = useForm();
+    const { register, handleSubmit, watch, formState, reset } = useForm();
     const [error, setError] = useState({ price: '', quantity: "", minimumOrder: "" })
     const onSubmit = ({ name, description, price, quantity, minimumOrder }) => {
 
@@ -31,6 +31,7 @@ const AddProduct = () => {
                         console.log(data)
                         if (data?.success) {
                             toast.success("Product Inserted Successfully")
+                            reset()
                         } else {
                             toast.error("Something went wrong")
                         }

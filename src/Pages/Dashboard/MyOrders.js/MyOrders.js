@@ -31,7 +31,7 @@ const MyOrders = () => {
                     setSelectedOrder(null)
                     refetch()
                 } else {
-
+                    toast.error('Something Went Wrong')
                 }
             }).catch(error => toast.error(error.message))
     }
