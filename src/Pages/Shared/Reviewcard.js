@@ -1,5 +1,6 @@
 import React from 'react';
 import noUser from './../../images/no-user.jpg'
+import RatingComponent from './RatingComponent';
 
 const Reviewcard = ({ review }) => {
 
@@ -16,7 +17,7 @@ const Reviewcard = ({ review }) => {
                         <p className='text-secondary-content font-bold text-xl'>{review.name}</p>
                     </div>
                     <div>
-                        <p>* * * * *</p>
+                        <RatingComponent review={review} />
                     </div>
                 </div>
                 <hr />

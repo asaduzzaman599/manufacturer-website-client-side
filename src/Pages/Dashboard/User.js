@@ -27,11 +27,11 @@ const User = ({ user, index, refetch }) => {
                 </div>
                 {user?.name}</td>
             <td>{user?.email}</td>
-            <td>{user?.role || "Customer"}</td>
+            <td className='font-bold'>{user?.role || "Customer"}</td>
             <td>
                 {
                     user?.role === "admin"
-                        ? <button class="btn btn-sm" onClick={makeAdmin}>Remove Admin</button>
+                        ? <button class="btn btn-sm btn-error" >Remove Admin</button>
                         : <button class="btn btn-sm" onClick={makeAdmin}>Make Admin</button>
                 }
             </td>

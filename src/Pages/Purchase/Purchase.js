@@ -8,85 +8,41 @@ import CommonHeading from '../../Components/CommonHeading';
 import CommonTitle from '../../Components/CommonTitle';
 import { auth } from '../../firebase.init';
 import PartDetail from './PartDetail';
+import PurchaseForm from './PurchaseForm';
+import TotalAmount from './TotalAmount';
 import UserInfo from './UserInfo'
 
 const Purchase = () => {
     const { partId } = useParams()
     const [part, setPart] = useState({})
-    const [orderQuantity, setOrderQuantity] = useState('')
+
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
+
 
     useEffect(() => {
         baseUrl.get(`/product/${partId}`)
             .then(({ data }) => setPart(data))
     }, [])
+    console.log(part)
 
-    const handlePurchase = (event) => {
 
-        event.preventDefault()
-
-        const address = event.target.address.value;
-        const phone = event.target.phone.value;
-        const description = event.target.description.value;
-
-        if (!user) {
-            return
-        }
-
-        const purchaseOrder = {
-            name: user?.displayName,
-            email: user?.email,
-            address,
-            phone,
-            description,
-            productId: part._id,
-            product: part.name,
-            orderQuantity,
-            unitPrice: parseInt(part.price),
-            totalAmount: parseInt(orderQuantity) * part.price,
-        }
-        console.log('click')
-        privateUrl.post(`/order?email=${user?.email}`, purchaseOrder).then(({ data }) => {
-            if (data?.result?.insertedId) {
-                /* privateUrl.put(`/product/${part._id}`, {
-                    quantity: parseInt(part.quantity) - parseInt(orderQuantity)
-                }).then(data => console.log(data)) */
-                toast.success("Your order placed successfully")
-                navigate('/dashboard/myorder')
-            }
-        })
-
-    }
     return (
-        <div className='container mx-auto'>
+        <div className='md:w-4/6 mx-auto'>
             <CommonHeading>Purchase</CommonHeading>
 
             <div className=' flex gap-6 p-6'>
-                {<PartDetail part={part}
-                    orderQuantity={orderQuantity}
-                    setOrderQuantity={setOrderQuantity}
+                <PartDetail part={part}
+
                 ></PartDetail>
-                }
-                <UserInfo user={user}></UserInfo>
+
 
             </div>
-            <div >
-                <form onSubmit={handlePurchase} className='p-10 grid gap-4 md:w-2/4 w-4/5 '>
-                    <CommonTitle>Please Fillout This</CommonTitle>
-                    <input type="text" name="address" placeholder="Address" className="input input-bordered w-full " required />
-                    <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full " required />
-                    <textarea type="text" name="description" placeholder="Description" className="input input-bordered w-full h-20" required />
+            {part?._id && <PurchaseForm
+                part={part}
+                user={user}
+            ></PurchaseForm>}
 
-
-                    <div className="text-right">
-                        <button disabled={+orderQuantity < part.minimumOrder || +orderQuantity > part.quantity} className="btn btn-primary inline-block ml-auto" type='submit'>Purchase</button>
-
-                    </div>
-
-
-                </form>
-            </div>
         </div>
     );
 };

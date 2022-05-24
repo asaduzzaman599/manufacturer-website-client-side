@@ -32,7 +32,7 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
             <td>
                 {
                     order?.paid
-                        ? <p>paid</p>
+                        ? <p className='text-success font-semibold'>Paid</p>
                         : <>
                             <Link to={`/dashboard/payment/${order._id}`} class="btn btn-sm btn-success mr-2" >Pay Now</Link>
                             {
