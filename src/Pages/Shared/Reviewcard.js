@@ -2,10 +2,10 @@ import React from 'react';
 import noUser from './../../images/no-user.jpg'
 import RatingComponent from './RatingComponent';
 
-const Reviewcard = ({ review }) => {
+const Reviewcard = ({ review, index }) => {
 
     return (
-        <div className="card max-w-lg bg-base-100 shadow-2xl mb-4">
+        <div className="card max-w-lg bg-base-100 shadow-2xl mb-4" data-aos={index % 2 === 0 ? `fade-up-right` : `fade-up-left`} data-aos-duration="1200">
             <div className="card-body">
                 <div className='flex justify-between  mb-3'>
                     <div className='flex justify-start gap-4 items-center'>

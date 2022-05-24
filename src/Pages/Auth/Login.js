@@ -25,6 +25,10 @@ const Login = () => {
 
                     toast.error("User not found")
                     break;
+                case 'Firebase: Error (auth/wrong-password).':
+
+                    toast.error("Wrong email or password")
+                    break;
 
                 default:
                     toast.error("Something went wrong")

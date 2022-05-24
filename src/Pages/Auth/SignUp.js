@@ -32,6 +32,9 @@ const SignUp = () => {
                 case 'Firebase: Error (auth/email-already-in-use).':
                     toast.error("User already exist")
                     break;
+                case 'Firebase: Error (auth/invalid-email).':
+                    toast.error("Invalid email")
+                    break;
 
                 default:
                     toast.error("Something went wrong")

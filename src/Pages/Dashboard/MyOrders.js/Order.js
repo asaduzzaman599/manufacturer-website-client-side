@@ -30,14 +30,21 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
             <td>
                 {status}
             </td>
+
             <td>
+                {order?.transactionId ? <small className='text-warning font-bold'>{order?.transactionId}</small> : <small className=' font-bold'>N/A</small>}
+            </td>
+            <td className=''>
                 {
                     order?.paid
-                        ? <p className='text-success font-semibold'>Paid</p>
+                        ? <>
+                            <p className='text-success font-semibold'>Paid</p>
+
+                        </>
                         : <>
                             <Link to={`/dashboard/payment/${order._id}`} className="btn btn-sm btn-success mr-2" >Pay Now</Link>
                             {
-                                <label for="delete-order-modal" className="btn btn-sm hover:btn-error modal-button" onClick={() => setSelectedProduct(order)} > <TrashIcon className="h-5 w-5 text-red-500" /></label>
+                                <label for="delete-order-modal" className="btn btn-sm btn-error modal-button" onClick={() => setSelectedProduct(order)} > Cancel</label>
                             }
                         </>
                 }
