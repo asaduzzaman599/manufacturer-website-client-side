@@ -9,7 +9,7 @@ import { auth } from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 import DeleteConfirmModal from './DeleteConfirmModal';
 import Product from './Product';
-
+import { TrashIcon } from '@heroicons/react/solid'
 const ManageProduct = () => {
     const [user] = useAuthState(auth)
     const { isLoading, error, data, refetch } = useQuery('ManageProducts', () =>
@@ -38,8 +38,8 @@ const ManageProduct = () => {
     return (
         <div>
             <CommonTitle>Manage Products</CommonTitle>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -67,7 +67,7 @@ const ManageProduct = () => {
             </div>
             {
                 selectedProduct && <DeleteConfirmModal selectedProduct={selectedProduct}>
-                    <button class="btn btn-error" onClick={deleteProduct}>Yes</button>
+                    <button className="btn btn-error" onClick={deleteProduct}>Yes</button>
                 </DeleteConfirmModal>
             }
         </div>

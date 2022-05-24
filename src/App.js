@@ -24,7 +24,9 @@ import RequiredUser from './Pages/Auth/RequiredUser';
 import NotFound from './Pages/Shared/NotFound';
 import Protfolio from './Pages/Protfolio';
 import Blogs from './Pages/Blogs';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 function App() {
   const routes = [
     { id: 1, name: "home", path: "/", Component: Home },
@@ -35,8 +37,10 @@ function App() {
   const privateRoute = [
     { id: 4, name: "Order", path: "/order/:partId", Component: Purchase },
   ]
+
+  AOS.init();
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-base-100 App">
+    <div className="min-h-screen flex flex-col justify-between bg-base-100 App scroll-smooth">
       <Header></Header>
       <ToastContainer />
       <Routes>

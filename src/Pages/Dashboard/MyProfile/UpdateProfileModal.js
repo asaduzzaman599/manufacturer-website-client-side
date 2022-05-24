@@ -33,59 +33,59 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
 
 
             {/* <!-- Put this part before </body> tag-- > */}
-            <input type="checkbox" id="update-profile-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle bg-base ">
-                <div class="modal-box relative mt-6 w-full">
-                    <label for="update-profile-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <input type="checkbox" id="update-profile-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle bg-base ">
+                <div className="modal-box relative mt-6 w-full">
+                    <label for="update-profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form className='w-full' onSubmit={handleSubmit(onSubmit)}>
 
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" value={user?.name} class="input input-bordered w-full" readOnly disabled />
+                            <input type="text" value={user?.name} className="input input-bordered w-full" readOnly disabled />
 
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="text" value={user?.email} class="input input-bordered w-full" readOnly disabled />
+                            <input type="text" value={user?.email} className="input input-bordered w-full" readOnly disabled />
                         </div>
 
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Phone</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Phone</span>
                             </label>
-                            <input type="text" placeholder='Your Phone No' class="input input-bordered w-full" defaultValue={user?.phone} {...register("phone", { required: true })} />
-                            <label class="label">
+                            <input type="text" placeholder='Your Phone No' className="input input-bordered w-full" defaultValue={user?.phone} {...register("phone", { required: true })} />
+                            <label className="label">
                                 {errors.phone && <span className='text-error'>This field is required</span>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Education</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Education</span>
                             </label>
-                            <input type="text" placeholder='Your Education' defaultValue={user?.education} class="input input-bordered w-full" {...register("education", { required: true })} />
-                            <label class="label">
+                            <input type="text" placeholder='Your Education' defaultValue={user?.education} className="input input-bordered w-full" {...register("education", { required: true })} />
+                            <label className="label">
                                 {errors.education && <span className='text-error'>This field is required</span>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Location</span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Location</span>
                             </label>
-                            <input type="text" placeholder='Your City/District' class="input input-bordered w-full" defaultValue={user?.location} {...register("location", { required: true })} />
-                            <label class="label">
+                            <input type="text" placeholder='Your City/District' className="input input-bordered w-full" defaultValue={user?.location} {...register("location", { required: true })} />
+                            <label className="label">
                                 {errors.education && <span className='text-error'>This field is required</span>}
                             </label>
                         </div>
-                        <div class="form-control w-full ">
-                            <label class="label">
-                                <span class="label-text">Linkedin Profile </span>
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Linkedin Profile </span>
                             </label>
-                            <input type="text" placeholder='Your Linkedin Profile ' class="input input-bordered w-full" defaultValue={user?.linkedin} {...register("linkedin", { required: true })} />
-                            <label class="label">
+                            <input type="text" placeholder='Your Linkedin Profile ' className="input input-bordered w-full" defaultValue={user?.linkedin} {...register("linkedin", { required: true })} />
+                            <label className="label">
                                 {errors.linkedin && <span className='text-error'>This field is required</span>}
                             </label>
                         </div>

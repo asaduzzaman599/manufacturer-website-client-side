@@ -65,9 +65,9 @@ const AddReview = () => {
 
                 <div>
 
-                    <div class="card max-w-lg bg-base-100 shadow-xl mx-auto">
-                        <form onSubmit={handleReview} class="card-body">
-                            <h2 class="card-title">Add Review</h2>
+                    <div className="card max-w-lg bg-base-100 shadow-xl mx-auto">
+                        <form onSubmit={handleReview} className="card-body">
+                            <h2 className="card-title">Add Review</h2>
                             <label htmlFor="" className='flex justify-between'>
 
                                 <span>1</span>
@@ -80,11 +80,11 @@ const AddReview = () => {
                             <input type="range" name="rating" min='1' max='5' />
 
                             <label htmlFor="" className=' mt-4 font-semibold'>Say somthing</label>
-                            <textarea class="input input-bordered w-full h-20 mb-4" name="description" id="" cols="30" rows="10" />
+                            <textarea className="input input-bordered w-full h-20 mb-4" name="description" id="" cols="30" rows="10" />
                             {error && <p><small className='text-error'>{error}</small></p>}
 
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-primary">Buy Now</button>
+                            <div className="card-actions justify-end">
+                                <button className="btn btn-primary">Buy Now</button>
                             </div>
                         </form>
                     </div>

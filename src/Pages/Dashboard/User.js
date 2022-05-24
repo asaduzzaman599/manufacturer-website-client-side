@@ -20,8 +20,8 @@ const User = ({ user, index, refetch }) => {
         <tr >
             <th>{index + 1}</th>
             <td className='flex items-center gap-4'>
-                <div class="avatar">
-                    <div class="w-12 rounded-full">
+                <div className="avatar">
+                    <div className="w-12 rounded-full">
                         <img src={user?.img || noUser} />
                     </div>
                 </div>
@@ -31,8 +31,8 @@ const User = ({ user, index, refetch }) => {
             <td>
                 {
                     user?.role === "admin"
-                        ? <button class="btn btn-sm btn-error" >Remove Admin</button>
-                        : <button class="btn btn-sm" onClick={makeAdmin}>Make Admin</button>
+                        ? <button className="btn btn-sm btn-error" >Remove Admin</button>
+                        : <button className="btn btn-sm" onClick={makeAdmin}>Make Admin</button>
                 }
             </td>
         </tr>

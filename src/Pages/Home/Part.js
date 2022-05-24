@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ShoppingCartIcon } from '@heroicons/react/solid'
 
 const Part = ({ part }) => {
     return (
-        <div className=" max-w-lg bg-base-100 shadow-xl mt-12">
+        <div className=" max-w-lg bg-base-100 shadow-xl hover:shadow-2xl mt-12" data-aos="fade-up"
+            data-aos-duration="3000">
             <figure><img src={part?.img} className="w-full p-10" alt="vehicle part" /></figure>
             <div className="card-body">
                 <h2 className="card-title font-bold  justify-center">
@@ -23,7 +25,7 @@ const Part = ({ part }) => {
 
             </div>
             <div className="card-actions w-full">
-                <Link to={`/order/${part?._id}`} className=" w-full  badge-info-content font-bold cursor-pointer py-4 hover:btn-primary duration-700">Purchase Now</Link>
+                <Link to={`/order/${part?._id}`} className=" w-full  badge-info-content font-bold cursor-pointer py-4 hover:btn-primary duration-700 flex items-center justify-center gap-4">Purchase Now <ShoppingCartIcon className="h-5 w-5 " /></Link>
             </div>
         </div>
     );

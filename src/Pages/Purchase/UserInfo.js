@@ -6,8 +6,8 @@ const UserInfo = ({ user }) => {
 
         <div className="card max-w-lg bg-primary text-primary-content my-10 ml-auto" >
             <div className="p-6 items-center gap-6 px-10 text-right flex justify-between">
-                <div class="avatar">
-                    <div class="w-24 rounded-full">
+                <div className="avatar">
+                    <div className="w-24 rounded-full">
                         <img src={user?.photoURL || noUser} />
                     </div>
                 </div>

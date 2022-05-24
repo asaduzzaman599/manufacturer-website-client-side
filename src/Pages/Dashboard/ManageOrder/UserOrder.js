@@ -29,8 +29,8 @@ const UserOrder = ({ order, index, user, refetch }) => {
             <th>{index + 1}</th>
             {/* <td className='flex items-center gap-4'> */}
             <td>
-                {/* <div class="avatar">
-                    <div class="w-12 rounded-full">
+                {/* <div className="avatar">
+                    <div className="w-12 rounded-full">
                         <img src={user?.img || noUser} />
                     </div>
                 </div> */}
@@ -43,10 +43,10 @@ const UserOrder = ({ order, index, user, refetch }) => {
             </td>
             <td>
                 {
-                    (order?.paid && (order?.status === "pending")) ? <button class="btn btn-sm btn-success mr-2" onClick={handleShipped}>Shipped Now</button> : ''
+                    (order?.paid && (order?.status === "pending")) ? <button className="btn btn-sm btn-success mr-2" onClick={handleShipped}>Shipped Now</button> : ''
                 }
                 {
-                    order?.paid && order?.status === "Shipped" && <p class="btn btn-sm btn-success mr-2" >Shipped</p>
+                    order?.paid && order?.status === "Shipped" && <p className="btn btn-sm btn-success mr-2" >Shipped</p>
                 }
 
 

@@ -5,12 +5,12 @@ import RatingComponent from './RatingComponent';
 const Reviewcard = ({ review }) => {
 
     return (
-        <div class="card max-w-lg bg-base-100 shadow-2xl mb-4">
-            <div class="card-body">
+        <div className="card max-w-lg bg-base-100 shadow-2xl mb-4">
+            <div className="card-body">
                 <div className='flex justify-between  mb-3'>
                     <div className='flex justify-start gap-4 items-center'>
-                        <div class="avatar">
-                            <div class="w-12 rounded-full ring ring-info ring-offset-base-100 ">
+                        <div className="avatar">
+                            <div className="w-12 rounded-full ring ring-info ring-offset-base-100 ">
                                 <img src={review.img || noUser} />
                             </div>
                         </div>

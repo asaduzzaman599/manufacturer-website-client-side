@@ -7,8 +7,8 @@ import Reviewcard from '../Shared/Reviewcard';
 
 const Review = () => {
 
-    const { isLoading, error, data } = useQuery('review', () =>
-        baseUrl.get('/review')
+    const { isLoading, error, data: reviews } = useQuery('review', () =>
+        baseUrl.get('/review').then(({ data }) => data)
     )
 
     if (isLoading) {
@@ -20,7 +20,7 @@ const Review = () => {
             <CommonTitle>Customers Review</CommonTitle>
             <div className='grid md:grid-cols-2 md:w-4/6 mx-auto gap-6'>
                 {
-                    data?.data?.map(review => <Reviewcard review={review} key={review._id}></Reviewcard>)
+                    reviews?.map(review => <Reviewcard review={review} key={review._id}></Reviewcard>)
                 }
             </div>
         </div>

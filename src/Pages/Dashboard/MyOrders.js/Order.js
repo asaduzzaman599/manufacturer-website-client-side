@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TrashIcon } from '@heroicons/react/solid'
 
 const Order = ({ order, index, refetch, setSelectedProduct }) => {
 
@@ -17,8 +18,8 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
             <th>{index + 1}</th>
             {/* <td className='flex items-center gap-4'> */}
             <td>
-                {/* <div class="avatar">
-                    <div class="w-12 rounded-full">
+                {/* <div className="avatar">
+                    <div className="w-12 rounded-full">
                         <img src={user?.img || noUser} />
                     </div>
                 </div> */}
@@ -34,9 +35,9 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
                     order?.paid
                         ? <p className='text-success font-semibold'>Paid</p>
                         : <>
-                            <Link to={`/dashboard/payment/${order._id}`} class="btn btn-sm btn-success mr-2" >Pay Now</Link>
+                            <Link to={`/dashboard/payment/${order._id}`} className="btn btn-sm btn-success mr-2" >Pay Now</Link>
                             {
-                                <label for="delete-order-modal" class="btn btn-error modal-button" onClick={() => setSelectedProduct(order)} >X</label>
+                                <label for="delete-order-modal" className="btn btn-sm hover:btn-error modal-button" onClick={() => setSelectedProduct(order)} > <TrashIcon className="h-5 w-5 text-red-500" /></label>
                             }
                         </>
                 }

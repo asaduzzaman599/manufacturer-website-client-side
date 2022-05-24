@@ -3,7 +3,6 @@ import Rating from 'react-rating';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const RatingComponent = ({ review }) => {
-    console.log(review)
     return (
         <Rating
             initialRating={review?.rating}

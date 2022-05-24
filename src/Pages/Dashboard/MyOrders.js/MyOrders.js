@@ -39,8 +39,8 @@ const MyOrders = () => {
     return (
         <div>
             <CommonTitle>My Orders</CommonTitle>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -69,7 +69,7 @@ const MyOrders = () => {
             </div>
             {
                 selectedOrder && <OrderDeleteConfirmModal selectedOrder={selectedOrder}>
-                    <button class="btn btn-error" onClick={deleteProduct}>Yes</button>
+                    <button className="btn btn-error" onClick={deleteProduct}>Yes</button>
                 </OrderDeleteConfirmModal>
             }
         </div>

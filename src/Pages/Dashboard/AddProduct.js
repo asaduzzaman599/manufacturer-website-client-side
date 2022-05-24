@@ -49,26 +49,26 @@ const AddProduct = () => {
             <div className='w-4/6 mx-auto shadow-xl p-10 my-6'>
                 <form onSubmit={handleSubmit(onSubmit)} className=' grid gap-10'>
                     <CommonTitle>Add a product</CommonTitle>
-                    <input type="text" placeholder="Name" class="input input-bordered w-full max-w-lg" {...register("name")} required />
-                    <textarea type="text" placeholder="Description" class="input input-bordered w-full max-w-lg" {...register("description")} required />
+                    <input type="text" placeholder="Name" className="input input-bordered w-full max-w-lg" {...register("name")} required />
+                    <textarea type="text" placeholder="Description" className="input input-bordered w-full max-w-lg" {...register("description")} required />
                     <div className='w-full'>
-                        <input type="text" placeholder="Price" class="input input-bordered w-full max-w-lg" {...register("price")} required />
+                        <input type="text" placeholder="Price" className="input input-bordered w-full max-w-lg" {...register("price")} required />
                         {error.price && <label className='text-error'><small>{error.price}</small></label>}
                     </div>
                     <div className='flex gap-4'>
 
                         <div className='w-full'>
-                            <input type="number" placeholder="Quantity" class="input input-bordered w-full max-w-lg"
+                            <input type="number" placeholder="Quantity" className="input input-bordered w-full max-w-lg"
                                 {...register("quantity")} required />
                             {error.quantity && <label className='text-error'><small>{error.quantity}</small></label>}
                         </div>
                         <div className='w-full'>
-                            <input type="number" placeholder="Minimum Order" class="input input-bordered w-full max-w-lg" {...register("minimumOrder")} required />
+                            <input type="number" placeholder="Minimum Order" className="input input-bordered w-full max-w-lg" {...register("minimumOrder")} required />
                             {error.minimumOrder && <label className='text-error'><small>{error.minimumOrder}</small></label>}
                         </div>
                     </div>
                     <label htmlFor='image' className='text-left'> image
-                        <input type="file" id='image' placeholder="image" class="input input-bordered w-full max-w-lg" /></label>
+                        <input type="file" id='image' placeholder="image" className="input input-bordered w-full max-w-lg" /></label>
                     <input type="submit" value="Add" className='btn btn-primary w-full' required />
                 </form>
             </div>
