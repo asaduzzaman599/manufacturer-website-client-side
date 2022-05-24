@@ -21,6 +21,7 @@ import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import Manageorders from './Pages/Dashboard/ManageOrder/Manageorders';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import RequiredUser from './Pages/Auth/RequiredUser';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   const routes = [
@@ -63,6 +64,7 @@ function App() {
           </Route>
         </Route>
 
+        <Route path='*' element={<NotFound />}></Route>
 
       </Routes>
       <Footer></Footer>
