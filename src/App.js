@@ -36,7 +36,7 @@ function App() {
     { id: 4, name: "Order", path: "/order/:partId", Component: Purchase },
   ]
   return (
-    <div className="min-h-screen flex flex-col justify-between App">
+    <div className="min-h-screen flex flex-col justify-between bg-base-100 App">
       <Header></Header>
       <ToastContainer />
       <Routes>

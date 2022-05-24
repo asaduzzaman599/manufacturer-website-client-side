@@ -5,7 +5,7 @@ import RatingComponent from './RatingComponent';
 const Reviewcard = ({ review }) => {
 
     return (
-        <div class="card max-w-lg  shadow-2xl mb-4">
+        <div class="card max-w-lg bg-base-100 shadow-2xl mb-4">
             <div class="card-body">
                 <div className='flex justify-between  mb-3'>
                     <div className='flex justify-start gap-4 items-center'>

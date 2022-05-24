@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Part = ({ part }) => {
     return (
-        <div className=" max-w-lg shadow-xl mt-12">
+        <div className=" max-w-lg bg-base-100 shadow-xl mt-12">
             <figure><img src={part?.img} className="w-full p-10" alt="vehicle part" /></figure>
             <div className="card-body">
-                <h2 className="card-title font-bold  justify-between">
+                <h2 className="card-title font-bold  justify-center">
                     <span>{part?.name}</span>
 
                 </h2>
 
                 <hr />
-                <p className='text-center m-3 text-base-content'><small>{part?.description}</small></p>
-                <p className='text-2xl font-bold text-success'>${part?.price} <small className='text-sm'>per unit</small></p>
+                <p className='text-center m-3 text-gray-400 text-sm'>{part?.description}</p>
+                <p className='text-2xl'><span className=' font-bold text-success'>${part?.price}</span> <small className='text-sm'>/per unit</small></p>
 
                 <div className='text-right'>
 

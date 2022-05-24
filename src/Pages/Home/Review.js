@@ -18,7 +18,7 @@ const Review = () => {
         <div className='mt-12'>
             <hr />
             <CommonTitle>Customers Review</CommonTitle>
-            <div className='grid md:grid-cols-2 w-5/6 mx-auto gap-6'>
+            <div className='grid md:grid-cols-2 md:w-4/6 mx-auto gap-6'>
                 {
                     data?.data?.map(review => <Reviewcard review={review} key={review._id}></Reviewcard>)
                 }
