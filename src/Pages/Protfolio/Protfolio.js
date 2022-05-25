@@ -7,7 +7,7 @@ const Protfolio = () => {
     return (
         <div>
             <CommonHeading>Protfolio</CommonHeading>
-            <div className='w-4/5 mx-auto'>
+            <div className='w-4/5 mx-auto mb-10'>
                 <About></About>
                 <Education></Education>
                 <Projects></Projects>

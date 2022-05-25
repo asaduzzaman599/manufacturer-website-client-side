@@ -20,7 +20,7 @@ const OurCapability = () => {
                         <h3 className='text-2xl font-bold mb-10' data-aos="fade-up-right" data-aos-delay="50"
                             data-aos-duration="1000">Our Capability</h3>
                         <p className='text-sm text-justify' data-aos="fade-up-right" data-aos-delay="75"
-                            data-aos-duration="1200">We are always aiming to exceed customer expectations and provide creative solutions to meet any kind of demand. Keeping up with the emerging trends, market needs and combining them with our production.</p>
+                            data-aos-duration="1200">We are always aiming to exceed Clients expectations and provide great car parts deal solutions to meet any kind of demand. Keeping up with the emerging trends, market needs and combining them with our production.</p>
                     </div>
                     <div><button className="btn btn-primary">Explore More</button></div>
                 </div>

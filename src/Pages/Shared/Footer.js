@@ -1,30 +1,27 @@
 import React from 'react';
 import { FaFacebookF } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Footer = () => {
     const date = new Date()
     const year = date.getFullYear()
     return (
         <footer className='bg-neutral '>
-            <div className="footer p-10 text-neutral-content  ">
-                <div>
-                    <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+            <div className="w-4/5 mx-auto grid md:grid-cols-5 grid-cols-1 p-10 text-neutral-content  ">
+                <div className='md:col-span-3  md:text-left text-center'>
+                    <span className="text-3xl font-bold">Vehicle Portions</span>
+
                 </div>
-                <div>
+                <div className=' md:text-left text-center grid'>
                     <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link to="/" className="link link-hover">About us</Link>
+                    <Link to="/" className="link link-hover">Contact</Link>
+                    <Link to="/" className="link link-hover">Jobs</Link>
                 </div>
-                <div>
+                <div className=' md:text-lefttext-center grid'>
                     <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <Link to="/" className="link link-hover">Terms of use</Link>
+                    <Link to="/" className="link link-hover">Privacy policy</Link>
+                    <Link to="/" className="link link-hover">Cookie policy</Link>
                 </div>
             </div>
             <p>{/* <FaFacebookF /> */}<small className='text-gray-400'>copyright &copy;{year}</small></p>
