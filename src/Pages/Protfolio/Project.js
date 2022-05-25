@@ -15,7 +15,7 @@ const Project = ({ project }) => {
                 </ol>
                 <p className='font-bold'>Tools</p>
                 <p>{project.tools}</p>
-                <a href={project.link} target='_blank' className='btn btn-outline'>Visit</a>
+                <a href={project.link} target='_blank' className='btn btn-outline'>Visit Website</a>
             </div>
         </div>
     );

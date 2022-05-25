@@ -18,8 +18,8 @@ const Skills = () => {
         { _id: 13, name: "JWT TOKEN " },
         { _id: 14, name: "FIREBASE " },
         { _id: 15, name: "CHROME DEBUG TOOL " },
-        { _id: 15, name: "HEROKU" },
-        { _id: 15, name: "NETLIFY" },
+        { _id: 16, name: "HEROKU" },
+        { _id: 17, name: "NETLIFY" },
     ]
     return (
         <div className='mt-16 mb-10'>

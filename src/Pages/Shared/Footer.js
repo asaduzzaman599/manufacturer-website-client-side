@@ -24,7 +24,7 @@ const Footer = () => {
                     <Link to="/" className="link link-hover">Cookie policy</Link>
                 </div>
             </div>
-            <p>{/* <FaFacebookF /> */}<small className='text-gray-400'>copyright &copy;{year}</small></p>
+            <p>{/* <FaFacebookF /> */}<small className='text-gray-400 mb-4'>copyright &copy;{year}</small></p>
         </footer>
     );
 };
