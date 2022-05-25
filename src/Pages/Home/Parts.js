@@ -15,8 +15,8 @@ const Parts = () => {
     }
     return (
         <div className='mt-12' id="parts">
-            <hr />
-            <CommonTitle>Vehicle Parts We Provide: </CommonTitle>
+
+            <CommonTitle>Vehicle Parts We Provide </CommonTitle>
             <div className='w-4/6 mx-auto grid md:grid-cols-3 gap-6'>
                 {
                     parts?.map(part => <Part key={part._id}

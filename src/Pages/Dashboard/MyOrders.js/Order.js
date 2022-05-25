@@ -42,9 +42,9 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
 
                         </>
                         : <>
-                            <Link to={`/dashboard/payment/${order._id}`} className="btn btn-sm btn-success mr-2" >Pay Now</Link>
+                            <Link to={`/dashboard/payment/${order._id}`} className="btn btn-sm btn-success mr-2" >Pay</Link>
                             {
-                                <label for="delete-order-modal" className="btn btn-sm btn-error modal-button" onClick={() => setSelectedProduct(order)} > Cancel</label>
+                                <label for="delete-order-modal" className="btn btn-sm btn-error modal-button" onClick={() => setSelectedProduct(order)} >X</label>
                             }
                         </>
                 }

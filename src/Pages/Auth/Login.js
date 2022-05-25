@@ -61,6 +61,7 @@ const Login = () => {
         } else {
             setEmailError('')
             sendPasswordResetEmail(email)
+            toast('Reset Password mail sent')
         }
     }
 
@@ -84,7 +85,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="Your Email" className="input input-bordered w-full text-right" {...register("email", {
+                            <input type="text" placeholder="Your Email" className="input input-bordered w-full " {...register("email", {
                                 required: true,
                                 pattern: {
                                     value: /\S+@\S+\.\S+/,
@@ -102,7 +103,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Your Password" className="input input-bordered w-full  text-right" {...register("password", {
+                            <input type="password" placeholder="Your Password" className="input input-bordered w-full  " {...register("password", {
                                 required: true, minLength: {
                                     value: 6,
                                     message: 'Password length must be more than 6'

@@ -5,10 +5,10 @@ import RatingComponent from './RatingComponent';
 const Reviewcard = ({ review, index }) => {
 
     return (
-        <div className="card max-w-lg bg-base-100 shadow-2xl mb-4" data-aos={index % 2 === 0 ? `fade-up-right` : `fade-up-left`} data-aos-duration="1200">
+        <div className=" max-w-lg bg-base-100 shadow-2xl mb-4" data-aos={index % 2 === 0 ? `fade-up-right` : `fade-up-left`} data-aos-duration="1200">
             <div className="card-body">
-                <div className='flex justify-between  mb-3'>
-                    <div className='flex justify-start gap-4 items-center'>
+                <div className='flex flex-col md:flex-row justify-between gap-4 items-center mb-3'>
+                    <div className='flex flex-col md:flex-row justify-start gap-4 items-center'>
                         <div className="avatar">
                             <div className="w-12 rounded-full ring ring-info ring-offset-base-100 ">
                                 <img src={review.img || noUser} />
@@ -21,8 +21,8 @@ const Reviewcard = ({ review, index }) => {
                     </div>
                 </div>
                 <hr />
-                <div className='text-right mt-3'>
-                    <p className='w-full py-2 wrap'>{review.description}</p>
+                <div className='text-right mt-3 w-full overflow-hidden'>
+                    <p className='w-full py-2 wrap text-center'>{review.description}</p>
                 </div>
 
             </div>

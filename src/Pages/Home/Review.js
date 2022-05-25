@@ -17,8 +17,8 @@ const Review = () => {
     return (
         <div className='mt-12'>
             <hr />
-            <CommonTitle>Customers Review</CommonTitle>
-            <div className='grid md:grid-cols-2 md:w-4/6 mx-auto gap-6'>
+            <CommonTitle>Our Clients Review</CommonTitle>
+            <div className='grid md:grid-cols-2 md:w-4/6 w-5/6 overflow-hidden mx-auto gap-6 p-6'>
                 {
                     reviews?.map((review, index) => <Reviewcard
                         index={index} review={review} key={review._id}></Reviewcard>)

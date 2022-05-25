@@ -12,8 +12,8 @@ import OrderDeleteConfirmModal from './OrderDeleteConfirmModal';
 
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth)
-    const { isLoading, error, data, refetch } = useQuery('Orders', () =>
-        privateUrl(`/order?email=${user.email}`)
+    const { isLoading, error, data: orders, refetch } = useQuery('Orders', () =>
+        privateUrl(`/order?email=${user.email}`).then(({ data }) => data)
     )
 
     const [selectedOrder, setSelectedOrder] = useState(null)
@@ -56,7 +56,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            data.data.map((order, index) => <Order
+                            orders?.map((order, index) => <Order
                                 key={order._id}
                                 index={index}
                                 order={order}
