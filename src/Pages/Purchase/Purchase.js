@@ -24,7 +24,6 @@ const Purchase = () => {
         baseUrl.get(`/product/${partId}`)
             .then(({ data }) => setPart(data))
     }, [])
-    console.log(part)
 
 
     return (

@@ -17,7 +17,6 @@ const UserOrder = ({ order, index, user, refetch }) => {
         privateUrl.put(`/order/${order._id}?email=${user.email}`, {
             status: "shipped"
         }).then(({ data }) => {
-            console.log(data)
             if (data.modifiedCount) {
                 refetch()
             }
@@ -35,8 +34,8 @@ const UserOrder = ({ order, index, user, refetch }) => {
                     </div>
                 </div> */}
                 {order?.name}</td>
+            <td>{order.product}</td>
             <td>{order?.orderQuantity}</td>
-            <td>{order.unitPrice}</td>
             <td>{order.totalAmount}</td>
             <td>
                 {status}

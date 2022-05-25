@@ -16,7 +16,6 @@ const ManageProduct = () => {
         baseUrl('/product')
     )
     const [selectedProduct, setSelectedProduct] = useState(null)
-    console.log(data)
 
     if (isLoading) {
         return <Loading></Loading>
@@ -25,7 +24,7 @@ const ManageProduct = () => {
         if (!user) return
         privateUrl.delete(`/product/${selectedProduct._id}?email=${user.email}`)
             .then(({ data }) => {
-                console.log(data)
+
                 if (data.deletedCount) {
                     toast.success('Delete successfully')
                     setSelectedProduct(null)

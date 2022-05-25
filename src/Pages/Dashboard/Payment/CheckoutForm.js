@@ -13,14 +13,14 @@ const CheckoutForm = ({ user, order }) => {
 
     useEffect(() => {
         if (user) {
-            console.log(order.totalAmount)
+
             privateUrl.post(`/create-payment-intent?email=${user?.email}`, {
                 totalAmount: order.totalAmount
             }).then(({ data }) => setClientSecret(data.clientSecret))
         }
     }, [user])
 
-    console.log(user.displayName)
+
 
     const handleSubmit = async (event) => {
 
@@ -45,7 +45,7 @@ const CheckoutForm = ({ user, order }) => {
 
         if (error) {
             setError(error.message);
-            console.log('[error]', error);
+
         } else {
             stripe
                 .confirmCardPayment(clientSecret, {
@@ -63,7 +63,6 @@ const CheckoutForm = ({ user, order }) => {
                         paid: true,
                         status: 'pending'
                     }
-                    console.log(payment)
                     privateUrl.put(`/order/${order._id}?email=${user.email}`, payment)
                         .then(({ data }) => {
                             if (data.modifiedCount) {

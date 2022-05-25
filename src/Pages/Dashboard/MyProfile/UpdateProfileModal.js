@@ -9,6 +9,9 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
         if (!user) {
             return
         }
+        if (!phone && !education && !location && !linkedin) {
+            return toast.error('Nothing to update')
+        }
         const userInfo = {
             phone,
             education,
@@ -35,7 +38,7 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
             {/* <!-- Put this part before </body> tag-- > */}
             <input type="checkbox" id="update-profile-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle bg-base ">
-                <div className="modal-box relative mt-6 w-full">
+                <div className="modal-box relative z-10 mt-6 w-full">
                     <label for="update-profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form className='w-full' onSubmit={handleSubmit(onSubmit)}>
 
@@ -57,37 +60,29 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
                             <label className="label">
                                 <span className="label-text">Phone</span>
                             </label>
-                            <input type="text" placeholder='Your Phone No' className="input input-bordered w-full" defaultValue={user?.phone} {...register("phone", { required: true })} />
-                            <label className="label">
-                                {errors.phone && <span className='text-error'>This field is required</span>}
-                            </label>
+                            <input type="text" placeholder='Your Phone No' className="input input-bordered w-full" defaultValue={user?.phone} {...register("phone",)} />
+
                         </div>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Education</span>
                             </label>
-                            <input type="text" placeholder='Your Education' defaultValue={user?.education} className="input input-bordered w-full" {...register("education", { required: true })} />
-                            <label className="label">
-                                {errors.education && <span className='text-error'>This field is required</span>}
-                            </label>
+                            <input type="text" placeholder='Your Education' defaultValue={user?.education} className="input input-bordered w-full" {...register("education")} />
+
                         </div>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Location</span>
                             </label>
-                            <input type="text" placeholder='Your City/District' className="input input-bordered w-full" defaultValue={user?.location} {...register("location", { required: true })} />
-                            <label className="label">
-                                {errors.education && <span className='text-error'>This field is required</span>}
-                            </label>
+                            <input type="text" placeholder='Your City/District' className="input input-bordered w-full" defaultValue={user?.location} {...register("location",)} />
+
                         </div>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Linkedin Profile </span>
                             </label>
-                            <input type="text" placeholder='Your Linkedin Profile ' className="input input-bordered w-full" defaultValue={user?.linkedin} {...register("linkedin", { required: true })} />
-                            <label className="label">
-                                {errors.linkedin && <span className='text-error'>This field is required</span>}
-                            </label>
+                            <input type="text" placeholder='Your Linkedin Profile ' className="input input-bordered w-full" defaultValue={user?.linkedin} {...register("linkedin")} />
+
                         </div>
 
 

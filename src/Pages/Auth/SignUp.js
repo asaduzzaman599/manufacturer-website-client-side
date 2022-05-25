@@ -27,7 +27,6 @@ const SignUp = () => {
 
     useEffect(() => {
         if (error || updateError) {
-            console.log(error?.message)
             switch (error?.message) {
                 case 'Firebase: Error (auth/email-already-in-use).':
                     toast.error("User already exist")
@@ -46,7 +45,6 @@ const SignUp = () => {
 
 
     const onSubmit = async ({ name, email, password }) => {
-        console.log(name, email, password)
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name })
     };

@@ -1,7 +1,6 @@
 import React from 'react';
 import noUser from './../../images/no-user.jpg'
 const UserInfo = ({ user }) => {
-    console.log(user)
     return (
 
         <div className="card max-w-lg bg-primary text-primary-content my-10 ml-auto" >

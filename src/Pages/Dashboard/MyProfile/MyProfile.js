@@ -21,7 +21,6 @@ const MyProfile = () => {
         })
     )
 
-    console.log(userData)
     return (
         <div>
             <CommonTitle>My Profile</CommonTitle>
@@ -32,14 +31,14 @@ const MyProfile = () => {
                     </div>
 
 
-                    <div className=' text-center md:text-left flex-1'>
-                        <h3 className='text-2xl font-bold mt-6'>{userData?.name}</h3>
+                    <div className=' text-center md:text-left flex-1 p-4'>
+                        <h3 className='text-2xl font-bold mt-6 mb-4'>{userData?.name}</h3>
                         <p className=''><span className="font-bold w-30 inline-block">Email</span> : {userData?.email}</p>
-                        <p className=''><span className="font-bold w-30 inline-block">Role</span> : {userData?.role || "Customer"}</p>
+                        <p className=''><span className="font-bold w-30 inline-block">Role</span> : {userData?.role || "Client"}</p>
                         <p className=''><span className="font-bold w-30 inline-block">Phone NO</span> : {userData?.phone || "N/A"}</p>
                         <p className=''><span className="font-bold w-30 inline-block">Education</span> : {userData?.education || "N/A"}</p>
                         <p className=''><span className="font-bold w-30 inline-block">Location</span> : {userData?.location || "N/A"}</p>
-                        <p className=''><span className="font-bold w-30 inline-block">Linkedin</span> : {userData?.linkedin ? <a href={userData?.linkedin} target="_blank" >{userData?.linkedin}</a> : "N/A"}</p>
+                        <p className='break-words'><span className="font-bold w-30 inline-block">Linkedin</span> : {userData?.linkedin ? <a className='break-words' href={userData?.linkedin} target="_blank" >{userData?.linkedin}</a> : "N/A"}</p>
 
                     </div>
                 </div>

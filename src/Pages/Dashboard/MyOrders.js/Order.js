@@ -12,7 +12,7 @@ const Order = ({ order, index, refetch, setSelectedProduct }) => {
     } else {
         status = <span className='text-error font-semibold'>Unpaid</span>
     }
-    console.log(order)
+
     return (
         <tr >
             <th>{index + 1}</th>

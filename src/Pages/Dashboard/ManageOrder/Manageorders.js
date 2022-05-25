@@ -14,7 +14,6 @@ const Manageorders = () => {
     /* if (data?.data?.length === 0) {
         refetch()
     } */
-    console.log(data)
     return (
         <div>
             <CommonTitle>Manage Orders</CommonTitle>
@@ -24,7 +23,7 @@ const Manageorders = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Customer</th>
+                            <th>Client</th>
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Total Amount</th>

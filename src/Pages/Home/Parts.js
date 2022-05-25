@@ -9,7 +9,6 @@ const Parts = () => {
     const { isLoading, error, data: parts } = useQuery('repoData', () =>
         baseUrl.get('product?limit=6').then(({ data }) => data)
     )
-    console.log(parts)
     if (isLoading) {
         return <Loading></Loading>
     }

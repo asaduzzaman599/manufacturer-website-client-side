@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className='bg-neutral '>
             <div className="w-4/5 mx-auto grid md:grid-cols-5 grid-cols-1 p-10 text-neutral-content  ">
                 <div className='md:col-span-3  md:text-left text-center'>
-                    <span className="text-3xl font-bold">Vehicle Portions</span>
+                    <Link to='/' className="text-3xl font-bold">Vehicle Portions</Link>
 
                 </div>
                 <div className=' md:text-left text-center grid'>

@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from '@heroicons/react/solid'
 
 const Part = ({ part }) => {
     return (
-        <div className=" max-w-lg bg-base-100 shadow-xl hover:shadow-2xl mt-12" data-aos="fade-up"
+        <div className=" max-w-lg bg-base-100 shadow-xl hover:shadow-2xl mt-12 border-2" data-aos="fade-up"
             data-aos-duration="3000">
             <figure><img src={part?.img} className="w-full p-10" alt="vehicle part" /></figure>
             <div className="card-body">

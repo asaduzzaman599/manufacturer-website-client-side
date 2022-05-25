@@ -27,7 +27,7 @@ const User = ({ user, index, refetch }) => {
                 </div>
                 {user?.name}</td>
             <td>{user?.email}</td>
-            <td className='font-bold'>{user?.role || "Customer"}</td>
+            <td className='font-bold'>{user?.role || "Client"}</td>
             <td>
                 {
                     user?.role === "admin"

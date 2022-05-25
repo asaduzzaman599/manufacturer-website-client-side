@@ -18,7 +18,6 @@ const PurchaseForm = ({ user, part, }) => {
 
     watch()
 
-    console.log('getva', getValues("orderQuantity"))
     const onSubmit = data => {
 
 
@@ -27,7 +26,6 @@ const PurchaseForm = ({ user, part, }) => {
         if (!user) {
             return
         }
-        console.log(data)
 
         const purchaseOrder = {
             name: user?.displayName,

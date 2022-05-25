@@ -18,8 +18,7 @@ const Login = () => {
     const [emailError, setEmailError] = useState('')
     const [sendPasswordResetEmail, sending, passwordReseterror] = useSendPasswordResetEmail(auth);
     useEffect(() => {
-        if (error) {
-            console.log(error?.message)
+        if (error || passwordReseterror) {
             switch (error?.message) {
                 case 'Firebase: Error (auth/user-not-found).':
 
@@ -35,7 +34,7 @@ const Login = () => {
                     break;
             }
         }
-    }, [error])
+    }, [error, passwordReseterror])
     const from = location?.state?.from?.pathname || '/'
 
     useEffect(() => {
@@ -71,7 +70,7 @@ const Login = () => {
 
 
     return (
-        <div className='p-10'>
+        <div className='md:p-10'>
             <div className='md:w-4/6 flex mx-auto'>
                 <div className='md:w-4/6 mx-auto p-10 shadow-xl'>
 

@@ -11,8 +11,8 @@ const PartDetail = ({ part, orderQuantity, setOrderQuantity }) => {
         <div className="card card-side bg-base  w-full mx-auto  flex flex-col md:flex-row shadow-lg p-6">
             <figure><img src={part?.img} alt="Movie" /></figure>
             <div className="card-body text-right">
-                <h2 className="text-4xl font-bold ">{part?.name}</h2>
-                <p className='text-3xl  font-bold'>${part?.price}
+                <h2 className="md:text-4xl text-2xl text-center font-bold ">{part?.name}</h2>
+                <p className='md:text-3xl text-sm text-center  font-bold'>${part?.price}
                     <small className='text-base-content  text-sm'>/per unit</small></p>
 
                 <div className='my-6'>
