@@ -10,7 +10,7 @@ const OrderDeleteConfirmModal = ({ children, selectedOrder }) => {
                     <p className="py-4">Are you sure you want to delete this {selectedOrder?.product} Order?</p>
                     <div className="modal-action">
                         {children}
-                        <label for="delete-order-modal" className="btn">Cancel</label>
+                        <label htmlFor="delete-order-modal" className="btn">Cancel</label>
                     </div>
                 </div>
             </div>

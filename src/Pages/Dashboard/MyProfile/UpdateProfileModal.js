@@ -39,7 +39,7 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
             <input type="checkbox" id="update-profile-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle bg-base ">
                 <div className="modal-box relative z-10 mt-6 w-full">
-                    <label for="update-profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="update-profile-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form className='w-full' onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full ">

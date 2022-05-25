@@ -17,7 +17,7 @@ const Product = ({ index, product, setSelectedProduct }) => {
             <td>{product?.minimumOrder}</td>
             <td>
                 {
-                    <label for="delete-modal" className="btn hover:btn-error modal-button" onClick={() => setSelectedProduct(product)} > <TrashIcon className="h-5 w-5 text-red-500" /></label>
+                    <label htmlFor="delete-modal" className="btn hover:btn-error modal-button" onClick={() => setSelectedProduct(product)} > <TrashIcon className="h-5 w-5 text-red-500" /></label>
                 }
             </td>
         </tr>
