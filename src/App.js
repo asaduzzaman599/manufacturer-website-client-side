@@ -22,10 +22,10 @@ import Manageorders from './Pages/Dashboard/ManageOrder/Manageorders';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import RequiredUser from './Pages/Auth/RequiredUser';
 import NotFound from './Pages/Shared/NotFound';
-import Protfolio from './Pages/Protfolio';
 import Blogs from './Pages/Blogs';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Protfolio from './Pages/Protfolio/Protfolio';
 // ..
 function App() {
   const routes = [
