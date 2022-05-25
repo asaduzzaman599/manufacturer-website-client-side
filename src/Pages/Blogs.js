@@ -10,7 +10,7 @@ const Blogs = () => {
                 <div className="shadow-lg p-6">
                     <h3 className='text-xl font-bold'>How will you improve the performance of a React Application?</h3>
                     <p></p>
-                    <li>we have to use to decrease rate of re-rendaring. we have to use key where need it help react to find out the component identically. use data locaally. load only necessary data not all. reusing component as much as possible</li>
+                    <li>we have decrease the rate of re-rendaring component. we have to use key where need it help react to find out the component identically. use data locally. load only necessary data not all. reusing component as much as possible.</li>
                 </div>
                 <div className="shadow-lg p-6">
                     <h3 className='text-xl font-bold'>What are the different ways to manage a state in a React application?</h3>

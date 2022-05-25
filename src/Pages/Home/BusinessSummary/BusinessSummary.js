@@ -11,7 +11,7 @@ const BusinessSummary = () => {
         { _id: 4, name: "Feedbacks", count: 100, Icon: ThumbUpIcon },
     ]
     return (
-        <div className=' bg-gradient-to-r from-primary  to-info py-10 text-base-100' data-aos="fade-down"
+        <div className=' bg-gradient-to-r from-primary  to-info py-10 mt-6 text-base-100' data-aos="fade-down"
             data-aos-duration="3000">
             <div className='w-4/5 grid md:grid-cols-4 gap-8 mx-auto'>
                 {
