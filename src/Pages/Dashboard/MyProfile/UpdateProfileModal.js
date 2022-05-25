@@ -77,7 +77,7 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
                             <input type="text" placeholder='Your City/District' className="input input-bordered w-full" defaultValue={user?.location} {...register("location",)} />
 
                         </div>
-                        <div className="form-control w-full ">
+                        <div className="form-control w-full mb-4">
                             <label className="label">
                                 <span className="label-text">Linkedin Profile </span>
                             </label>

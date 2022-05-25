@@ -17,7 +17,7 @@ const SignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const from = '/'
+    const from = '/dashboard'
     useEffect(() => {
         if (token) {
 
@@ -97,7 +97,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="Your Password" className="input input-bordered w-full  " {...register("password", {
+                            <input type="password" placeholder="Your Password" className="input input-bordered w-full  " {...register("password", {
                                 required: true, minLength: {
                                     value: 6,
                                     message: 'Password length must be more than 6'

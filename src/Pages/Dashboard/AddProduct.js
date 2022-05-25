@@ -65,7 +65,7 @@ const AddProduct = () => {
                             {error.minimumOrder && <label className='text-error'><small>{error.minimumOrder}</small></label>}
                         </div>
                     </div>
-                    <label htmlhtmlFor='image' className='text-left'> image
+                    <label htmlFor='image' className='text-left'> image
                         <input type="file" id='image' placeholder="image" className="input input-bordered w-full " /></label>
                     <input type="submit" value="Add" className='btn btn-primary w-full' required />
                 </form>

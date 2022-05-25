@@ -21,7 +21,6 @@ const Skills = () => {
         { _id: 15, name: "HEROKU" },
         { _id: 15, name: "NETLIFY" },
     ]
-    console.log(skills)
     return (
         <div className='mt-16 mb-10'>
             <hr />

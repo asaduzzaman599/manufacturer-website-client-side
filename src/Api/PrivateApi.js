@@ -27,7 +27,6 @@ privateUrl.interceptors.response.use(function (response) {
 
     if (error?.response?.status === 403) {
         toast.message(error.message)
-        console.log('hello')
         signOut(auth)
     }
     // Any status codes that falls outside the range of 2xx cause this function to trigger

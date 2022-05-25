@@ -1,5 +1,6 @@
 import { LocationMarkerIcon, MailIcon, PhoneIcon } from '@heroicons/react/solid';
 import React from 'react';
+import { toast } from 'react-toastify';
 import CommonTitle from '../../../Components/CommonTitle';
 import ContactInfo from './ContactInfo';
 
@@ -32,7 +33,7 @@ const ContactUs = () => {
                         <textarea className="textarea textarea-bordered w-full" placeholder="What's on your main?"></textarea>
                     </div>
                     <div>
-                        <button className='btn btn-primary w-full'>Submit</button>
+                        <button className='btn btn-primary w-full' onClick={() => toast.success("Thank you. We will contact soon")}>Submit</button>
                     </div>
                 </div>
 
