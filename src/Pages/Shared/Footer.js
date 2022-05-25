@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
     const date = new Date()
     const year = date.getFullYear()
@@ -27,7 +27,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </div>
-            <p><small className='text-gray-400'>copyright &copy;{year}</small></p>
+            <p>{/* <FaFacebookF /> */}<small className='text-gray-400'>copyright &copy;{year}</small></p>
         </footer>
     );
 };
