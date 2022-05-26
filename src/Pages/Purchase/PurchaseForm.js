@@ -35,10 +35,11 @@ const PurchaseForm = ({ user, part, }) => {
             description: data.description,
             productId: part._id,
             product: part.name,
-            orderQuantity,
+            orderQuantity: data.orderQuantity,
             unitPrice: parseInt(part.price),
             totalAmount: parseInt(orderQuantity) * part.price,
         }
+        console.log(data.orderQuantity)
         privateUrl.post(`/order?email=${user?.email}`, purchaseOrder).then(({ data }) => {
             if (data?.result?.insertedId) {
 
