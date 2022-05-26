@@ -53,7 +53,7 @@ const Login = () => {
     };
 
 
-    const handleForgetPass = () => {
+    const handleForgetPass = async () => {
         const email = getValues('email')
         if (!email) {
             setEmailError('Please Enter Your email')
@@ -61,7 +61,7 @@ const Login = () => {
             setEmailError('Invalid email')
         } else {
             setEmailError('')
-            sendPasswordResetEmail(email)
+            await sendPasswordResetEmail(email)
             toast('Reset Password mail sent')
         }
     }

@@ -30,7 +30,7 @@ const ContactUs = () => {
                         <input type="text" placeholder="Subject" className="input input-bordered w-full" />
                     </div>
                     <div>
-                        <textarea className="textarea textarea-bordered w-full" placeholder="What's on your main?"></textarea>
+                        <textarea className="textarea textarea-bordered w-full" placeholder="What's on your mind?"></textarea>
                     </div>
                     <div>
                         <button className='btn btn-primary w-full' onClick={() => toast.success("Thank you. We will contact soon")}>Submit</button>
