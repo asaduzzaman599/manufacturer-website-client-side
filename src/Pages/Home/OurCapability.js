@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import CommonTitle from '../../Components/CommonTitle';
-import image1 from './../../images/parts/image1.jpg'
 import image2 from './../../images/parts/image2.jpg'
-import image3 from './../../images/parts/image3.jpg'
 const OurCapability = () => {
-    const imageArr = [image1, image2, image3]
-    const [counter, setCounter] = useState(0)
 
-    setInterval(() => {
-        const count = (counter + 1) % imageArr.length;
-        setCounter(count)
-    }, 2000)
+
     return (
         <div className='mt-12 w-5/6 mx-auto ' id='contact'>
             <hr />
@@ -25,7 +17,7 @@ const OurCapability = () => {
                     <div><button className="btn btn-primary">Explore More</button></div>
                 </div>
                 <div>
-                    <img src={imageArr[1]} className='w-full h-30 rounded-3xl' />
+                    <img src={image2} className='w-full h-30 rounded-3xl' />
                 </div>
             </div>
 
