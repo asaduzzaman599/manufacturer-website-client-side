@@ -9,7 +9,7 @@ const Banner = () => {
                     <h1 className="text-5xl font-bold flex-1 md:text-right" data-aos="fade-left" data-aos-delay="50"
                         data-aos-duration="1000" >Vehicle Portion!</h1>
                     <p className="py-6 md:text-right" data-aos="fade-left" data-aos-delay="75"
-                        data-aos-duration="1100" >We are providing whole sale car parts. So make sure your loot with qualityful and durable car parts. Also track your order status here.</p>
+                        data-aos-duration="1100" >We are menufracture company work with car part, provide whole sale car parts. So make sure your product lot with qualityful and durable car parts to ensure your customers trust.</p>
                     <a href='#parts' className="btn btn-primary" data-aos="zoom-in-up" data-aos-duration="1200">Get Started</a>
                 </div>
             </div>
