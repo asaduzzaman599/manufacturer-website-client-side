@@ -11,7 +11,7 @@ const ContactUs = () => {
         { _id: 3, name: "Our Office", value: "Dhaka Cantonement, Dhaka", Icon: LocationMarkerIcon },
     ]
     return (
-        <div className='mt-12' id='contact'>
+        <section className='mt-12' id='contact'>
             <hr />
             <CommonTitle>Contact Us</CommonTitle>
             <div className=' mb-10 md:w-4/5 w-full mx-auto grid md:grid-cols-2 grid-cols-1 gap-4'>
@@ -39,7 +39,7 @@ const ContactUs = () => {
 
             </div>
 
-        </div>
+        </section>
     );
 };
 

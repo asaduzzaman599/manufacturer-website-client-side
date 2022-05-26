@@ -38,7 +38,7 @@ const Blogs = () => {
                 </div>
                 <div className="shadow-lg p-6">
                     <h3 className='text-xl font-bold mb-5'>What is a unit test? Why should write unit tests?</h3>
-                    <p>Unit testing is testing individual component of code of project.It help to  track code debug and problems</p>
+                    <p>Unit testing is testing individual component of code of project.It help to  track code debug and problems of a project developing time individually. it check functions, methods or compoents accuracy and help to improve performance. Unit testing ensuring products code quality.</p>
                 </div>
             </div>
         </div>

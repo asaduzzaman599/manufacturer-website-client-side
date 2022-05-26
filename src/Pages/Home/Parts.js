@@ -13,7 +13,7 @@ const Parts = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='mt-12' id="parts">
+        <section className='mt-12' id="parts">
 
             <CommonTitle>Vehicle Parts We Provide </CommonTitle>
             <div className='w-5/6 mx-auto grid md:grid-cols-3 gap-6'>
@@ -25,7 +25,7 @@ const Parts = () => {
 
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

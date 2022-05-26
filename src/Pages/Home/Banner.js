@@ -2,7 +2,7 @@ import React from 'react';
 import banner from './../../images/banner.jpg'
 const Banner = () => {
     return (
-        <div className="hero min-h-screen container  mx-auto">
+        <section className="hero min-h-screen container  mx-auto">
             <div className="hero-content flex flex-col gap-10 lg:flex-row md:text-right">
                 <img src={banner} className="max-w-lg rounded-lg shadow-2xl flex-1 w-full " />
                 <div className='md:pl-16 md:pr-6 w-full'>
@@ -13,7 +13,7 @@ const Banner = () => {
                     <a href='#parts' className="btn btn-primary" data-aos="zoom-in-up" data-aos-duration="1200">Get Started</a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

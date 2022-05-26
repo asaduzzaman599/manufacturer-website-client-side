@@ -22,7 +22,7 @@ const Skills = () => {
         { _id: 17, name: "NETLIFY" },
     ]
     return (
-        <div className='mt-16 mb-10'>
+        <section className='mt-16 mb-10'>
             <hr />
 
             <h3 className='text-2xl font-bold my-6'>Technologies &amp; Skills</h3>
@@ -35,7 +35,7 @@ const Skills = () => {
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -15,7 +15,7 @@ const Review = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='mt-12'>
+        <section className='mt-12'>
             <hr />
             <CommonTitle>Our Clients Feedback About Company</CommonTitle>
             <div className='grid md:grid-cols-2 grid-cols-1 md:w-4/6 w-5/6  mx-auto gap-6 p-6 overflow-hidden'>
@@ -26,7 +26,7 @@ const Review = () => {
 
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

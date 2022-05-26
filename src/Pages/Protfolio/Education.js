@@ -9,7 +9,7 @@ const Education = () => {
     ]
 
     return (
-        <div>
+        <section>
             <hr />
             <h3 className='text-2xl font-bold my-6'>Education</h3>
             <div className=' grid md:grid-cols-3 grid-cols-1 gap-6'>
@@ -17,7 +17,7 @@ const Education = () => {
                     institutes.map(institute => <Institute key={institute._id} institute={institute}></Institute>)
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

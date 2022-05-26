@@ -4,7 +4,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 
 const About = () => {
     return (
-        <div className='md:flex items-center justify-center'>
+        <section className='md:flex items-center justify-center'>
             <div className='flex-1'>
                 <img src={myBGPic} className='md:w-4/5 p-10' alt="" />
             </div>
@@ -17,7 +17,7 @@ const About = () => {
                     <p className='break-words'>asaduzzamansoumit@gmail.com</p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
