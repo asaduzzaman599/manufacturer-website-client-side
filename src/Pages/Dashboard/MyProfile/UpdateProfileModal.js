@@ -86,9 +86,6 @@ const UpdateProfileModal = ({ user, setUpdating, refetch }) => {
                         </div>
 
 
-
-
-
                         <input className='btn btn-outline w-full' type="submit" />
                     </form>
                 </div>

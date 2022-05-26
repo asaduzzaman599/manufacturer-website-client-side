@@ -18,6 +18,7 @@ const Login = () => {
     const [emailError, setEmailError] = useState('')
     const [sendPasswordResetEmail, sending, passwordReseterror] = useSendPasswordResetEmail(auth);
     useEffect(() => {
+        //checking error and display toast
         if (error || passwordReseterror) {
             switch (error?.message) {
                 case 'Firebase: Error (auth/user-not-found).':
@@ -38,6 +39,7 @@ const Login = () => {
     const from = location?.state?.from?.pathname || '/'
 
     useEffect(() => {
+        //if token found navigate 
         if (token) {
             navigate(from)
         }

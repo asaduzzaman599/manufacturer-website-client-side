@@ -45,7 +45,7 @@ const MyProfile = () => {
                 <label htmlFor="update-profile-modal" className="btn btn-outline modal-button" onClick={() => setUpdating(true)}>Update Profile</label>
             </div>
 
-            {
+            {   //update profile modal
                 updating && <UpdateProfileModal
                     user={userData}
                     setUpdating={setUpdating}

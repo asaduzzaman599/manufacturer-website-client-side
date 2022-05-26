@@ -12,19 +12,19 @@ import Product from './Product';
 import { TrashIcon } from '@heroicons/react/solid'
 const ManageProduct = () => {
     const [user] = useAuthState(auth)
-    const { isLoading, error, data, refetch } = useQuery('ManageProducts', () =>
-        baseUrl('/product')
+    const { isLoading, error, data: products, refetch } = useQuery('ManageProducts', () =>
+        baseUrl('/product').then(({ data }) => data)
     )
     const [selectedProduct, setSelectedProduct] = useState(null)
 
     if (isLoading) {
         return <Loading></Loading>
     }
+    //delete product on click delete
     const deleteProduct = () => {
         if (!user) return
         privateUrl.delete(`/product/${selectedProduct._id}?email=${user.email}`)
             .then(({ data }) => {
-
                 if (data.deletedCount) {
                     toast.success('Delete successfully')
                     setSelectedProduct(null)
@@ -34,6 +34,8 @@ const ManageProduct = () => {
                 }
             }).catch(error => toast.error(error.message))
     }
+
+
     return (
         <div>
             <CommonTitle>Manage Products</CommonTitle>
@@ -52,7 +54,7 @@ const ManageProduct = () => {
                     </thead>
                     <tbody>
                         {
-                            data.data.map((product, index) => <Product
+                            products.map((product, index) => <Product
                                 key={product._id}
                                 index={index}
                                 product={product}
@@ -64,7 +66,7 @@ const ManageProduct = () => {
                     </tbody>
                 </table>
             </div>
-            {
+            {   //product delete modal
                 selectedProduct && <DeleteConfirmModal selectedProduct={selectedProduct}>
                     <button className="btn btn-error" onClick={deleteProduct}>Yes</button>
                 </DeleteConfirmModal>

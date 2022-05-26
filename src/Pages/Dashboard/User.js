@@ -27,9 +27,11 @@ const User = ({ user, index, refetch }) => {
                 </div>
                 {user?.name}</td>
             <td>{user?.email}</td>
+            {/* if admin show role or client if not */}
             <td className='font-bold'>{user?.role || "Client"}</td>
             <td>
                 {
+                    //button for make admin
                     user?.role === "admin"
                         ? <button className="btn btn-sm btn-error" >Remove Admin</button>
                         : <button className="btn btn-sm" onClick={makeAdmin}>Make Admin</button>

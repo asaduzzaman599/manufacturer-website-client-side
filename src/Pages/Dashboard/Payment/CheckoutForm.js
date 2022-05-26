@@ -13,7 +13,7 @@ const CheckoutForm = ({ user, order }) => {
 
     useEffect(() => {
         if (user) {
-
+            //getting client secret key from back end
             privateUrl.post(`/create-payment-intent?email=${user?.email}`, {
                 totalAmount: order.totalAmount
             }).then(({ data }) => setClientSecret(data.clientSecret))
@@ -26,7 +26,7 @@ const CheckoutForm = ({ user, order }) => {
 
         setError('');
         event.preventDefault();
-
+        //if stripe and element not available then return
         if (!stripe || !elements) {
             return;
         }
@@ -36,6 +36,7 @@ const CheckoutForm = ({ user, order }) => {
         if (card == null) {
             return;
         }
+
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card,
@@ -47,6 +48,7 @@ const CheckoutForm = ({ user, order }) => {
             setError(error.message);
 
         } else {
+            //confirm payment with  client secret key
             stripe
                 .confirmCardPayment(clientSecret, {
                     payment_method: {

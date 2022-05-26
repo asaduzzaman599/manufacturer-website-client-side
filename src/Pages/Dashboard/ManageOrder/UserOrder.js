@@ -27,13 +27,7 @@ const UserOrder = ({ order, index, user, refetch }) => {
         <tr >
             <th>{index + 1}</th>
             {/* <td className='flex items-center gap-4'> */}
-            <td>
-                {/* <div className="avatar">
-                    <div className="w-12 rounded-full">
-                        <img src={user?.img || noUser} />
-                    </div>
-                </div> */}
-                {order?.name}</td>
+            <td>{order?.name}</td>
             <td>{order.product}</td>
             <td>{order?.orderQuantity}</td>
             <td>{order.totalAmount}</td>
@@ -41,10 +35,10 @@ const UserOrder = ({ order, index, user, refetch }) => {
                 {status}
             </td>
             <td>
-                {
+                {   //if order paid and status pending admin can shipped order other wise nothing
                     (order?.paid && (order?.status === "pending")) ? <button className="btn btn-sm btn-success mr-2" onClick={handleShipped}>Shipped Now</button> : ''
                 }
-                {
+                {   //if order paid and status shipped status shipped 
                     order?.paid && order?.status === "Shipped" && <p className="btn btn-sm btn-success mr-2" >Shipped</p>
                 }
 

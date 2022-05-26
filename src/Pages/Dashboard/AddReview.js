@@ -21,7 +21,7 @@ const AddReview = () => {
     }
 
     const handleReview = (event) => {
-
+        //initially set error empty
         setError('')
         event.preventDefault()
         const rating = event.target.rating.value
@@ -42,7 +42,7 @@ const AddReview = () => {
             rating,
             description
         }
-
+        //post data to server
         privateUrl.post(`/review?email=${user.email}`, review)
             .then(({ data: responseData }) => {
                 if (responseData.success) {

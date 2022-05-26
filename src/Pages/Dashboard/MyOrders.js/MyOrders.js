@@ -18,7 +18,7 @@ const MyOrders = () => {
 
     const [selectedOrder, setSelectedOrder] = useState(null)
 
-    if (isLoading) {
+    if (isLoading || loading) {
         return <Loading></Loading>
     }
 
@@ -68,7 +68,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-            {
+            {   //delete order modal
                 selectedOrder && <OrderDeleteConfirmModal selectedOrder={selectedOrder}>
                     <button className="btn btn-error" onClick={deleteProduct}>Yes</button>
                 </OrderDeleteConfirmModal>

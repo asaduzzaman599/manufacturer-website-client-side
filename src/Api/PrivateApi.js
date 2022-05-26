@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth } from "../firebase.init";
 
+//private url to ensure the authorization
 export const privateUrl = axios.create({
     baseURL: 'https://vehicle-portion-asaduzzaman599.herokuapp.com/'
 });

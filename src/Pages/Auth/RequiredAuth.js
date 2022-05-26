@@ -9,6 +9,7 @@ const RequiredAuth = () => {
     const location = useLocation()
     const [user, loading] = useAuthState(auth)
 
+    //user check and navigate desired route
 
     if (loading) {
         return <Loading></Loading>

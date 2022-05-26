@@ -26,6 +26,7 @@ const SignUp = () => {
     }, [token])
 
     useEffect(() => {
+        //check error and display error
         if (error || updateError) {
             switch (error?.message) {
                 case 'Firebase: Error (auth/email-already-in-use).':
@@ -45,6 +46,7 @@ const SignUp = () => {
 
 
     const onSubmit = async ({ name, email, password }) => {
+        //user creating and update user info
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name })
     };

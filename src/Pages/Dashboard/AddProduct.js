@@ -11,16 +11,19 @@ const AddProduct = () => {
     const { register, handleSubmit, watch, formState, reset } = useForm();
     const [error, setError] = useState({ price: '', quantity: "", minimumOrder: "" })
     const onSubmit = ({ name, description, price, quantity, minimumOrder }) => {
-
+        //getting image from form
         const formData = new FormData()
         const fileField = document.querySelector('input[type="file"]');
         formData.append('image', fileField.files[0])
+
+        //hosting image with imgbb
         fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_KEY} `, {
             method: 'POST',
             body: formData
         })
             .then(response => response.json())
             .then(result => {
+                //if himage hosting done then post data backend with product information
                 if (result.success && user) {
                     const img = result?.data?.display_url;
                     const product = {
@@ -43,7 +46,7 @@ const AddProduct = () => {
     };
     return (
         <div>
-
+            {/* form for collecting product information */}
             <div className='md:w-4/6 mx-auto shadow-xl p-10 my-6'>
                 <form onSubmit={handleSubmit(onSubmit)} className=' grid gap-10'>
                     <CommonTitle>Add a product</CommonTitle>

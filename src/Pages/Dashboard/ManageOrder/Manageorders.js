@@ -4,16 +4,18 @@ import { useQuery } from 'react-query';
 import { privateUrl } from '../../../Api/PrivateApi';
 import CommonTitle from '../../../Components/CommonTitle';
 import { auth } from '../../../firebase.init';
+import Loading from '../../Shared/Loading';
 import UserOrder from './UserOrder';
 
 const Manageorders = () => {
     const [user] = useAuthState(auth)
-    const { isLoading, error, data, refetch } = useQuery('Orders', () =>
-        privateUrl(`/allorder?email=${user.email}`)
+    const { isLoading, error, data, refetch } = useQuery('Orders', () => privateUrl(`/allorder?email=${user.email}`)
     )
-    /* if (data?.data?.length === 0) {
-        refetch()
-    } */
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <CommonTitle>Manage Orders</CommonTitle>

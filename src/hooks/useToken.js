@@ -9,6 +9,8 @@ const useToken = () => {
     const navigate = useNavigate()
     useEffect(() => {
 
+        //token genarated froom backed for authorization
+
         if (user && user?.displayName) {
             baseUrl.put(`/user/${user?.email}`, { name: user?.displayName, email: user?.email, img: user?.photoURL }).then(({ data }) => {
                 if (data.success) {

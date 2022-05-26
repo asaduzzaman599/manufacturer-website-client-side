@@ -6,6 +6,9 @@ import Loading from '../Shared/Loading';
 const RequiredUser = ({ children }) => {
     const { admin, loading } = useAdmin()
     const location = useLocation()
+
+
+    //user check and navigate desired route
     if (loading) {
         return <Loading></Loading>
     }
