@@ -39,7 +39,7 @@ const UserOrder = ({ order, index, user, refetch, setSelectedOrder }) => {
                 {   //if order paid and status pending admin can shipped order other wise nothing
                     (order?.paid && (order?.status === "pending")) ? <button className="btn btn-sm btn-success mr-2" onClick={handleShipped}>Shipped Now</button> : ''
                 }{   //if order unpaid and admin can shipped order other wise nothing
-                    (!order?.paid) ? <label htmlFor="delete-order-modal" className="btn btn-sm btn-error modal-button" onClick={() => setSelectedOrder(order)} >Cencel</label> : ''
+                    (!order?.paid) ? <label htmlFor="delete-order-modal" className="btn btn-sm btn-error modal-button" onClick={() => setSelectedOrder(order)} >Cancel</label> : ''
                 }
                 {   //if order paid and status shipped status shipped 
                     order?.paid && order?.status === "Shipped" && <p className="btn btn-sm btn-success mr-2" >Shipped</p>
