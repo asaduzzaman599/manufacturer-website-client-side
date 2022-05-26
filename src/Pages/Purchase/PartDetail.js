@@ -6,7 +6,7 @@ const PartDetail = ({ part }) => {
 
     return (
         <div className="card card-side bg-base  w-full mx-auto  flex flex-col md:flex-row shadow-lg p-6">
-            <figure className='flex-1 md:p-10 p-6'><img src={part?.img} alt="Movie" /></figure>
+            <figure className='flex-1 md:p-10 p-6'><img src={part?.img} alt="Movie" className='rounded-lg' /></figure>
             <div className="card-body text-right flex-1">
                 <h2 className="md:text-4xl text-2xl text-center font-bold ">{part?.name}</h2>
                 <p className='md:text-3xl text-sm text-center  font-bold'>${part?.price}
