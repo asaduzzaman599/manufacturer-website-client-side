@@ -8,7 +8,7 @@ import { auth } from '../../firebase.init';
 
 const AddProduct = () => {
     const [user] = useAuthState(auth)
-    const { register, handleSubmit, watch, formState, reset } = useForm();
+    const { register, handleSubmit, watch, formState, reset, getValues } = useForm();
     const [error, setError] = useState({ price: '', quantity: "", minimumOrder: "" })
     const onSubmit = ({ name, description, price, quantity, minimumOrder }) => {
         //getting image from form
@@ -44,6 +44,9 @@ const AddProduct = () => {
             });
 
     };
+    watch()
+    console.log(+getValues('quantity') < +getValues('minimumOrder'))
+    console.log(getValues('quantity'))
     return (
         <div>
             {/* form for collecting product information */}
@@ -70,7 +73,7 @@ const AddProduct = () => {
                     </div>
                     <label htmlFor='image' className='text-left'> image
                         <input type="file" id='image' placeholder="image" className="input input-bordered w-full " /></label>
-                    <input type="submit" value="Add" className='btn btn-primary w-full' required />
+                    <input type="submit" disabled={+getValues('price') < 0 || +getValues('quantity') < +getValues('minimumOrder') || +getValues('quantity') < 0 || getValues('minimumOrder') < 0} value="Add" className='btn btn-primary w-full' required />
                 </form>
             </div>
         </div>
