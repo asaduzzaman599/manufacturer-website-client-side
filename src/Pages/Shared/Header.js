@@ -7,6 +7,12 @@ import { auth } from "../../firebase.init";
 const Header = () => {
     const [user] = useAuthState(auth)
     const location = useLocation()
+
+    const handleLogout = () => {
+        signOut(auth)
+        localStorage.removeItem('access_token')
+    }
+
     const menuItems = <>
         <li><NavLink to='/'>HOME</NavLink></li>
         <li><NavLink to='/protfolio'>PROTFOLIO</NavLink></li>
@@ -16,7 +22,7 @@ const Header = () => {
 
                 <>
                     <li><NavLink to='/dashboard'>DASHBOARD</NavLink></li>
-                    <li><button className='btn btn-ghost' onClick={() => signOut(auth)}>LOGOUT</button></li>
+                    <li><button className='btn btn-ghost' onClick={handleLogout}>LOGOUT</button></li>
                 </>
                 : <>
                     <li><NavLink to='/login'>LOGIN</NavLink></li>

@@ -6,8 +6,8 @@ import Loading from '../Shared/Loading';
 import Part from './Part';
 
 const Parts = () => {
-    const { isLoading, error, data: parts } = useQuery('repoData', () =>
-        baseUrl.get('product?limit=6').then(({ data }) => data)
+    const { isLoading, error, data: parts } = useQuery('products', () =>
+        baseUrl.get('/product?limit=6').then(({ data }) => data)
     )
     if (isLoading) {
         return <Loading></Loading>
@@ -16,11 +16,13 @@ const Parts = () => {
         <div className='mt-12' id="parts">
 
             <CommonTitle>Vehicle Parts We Provide </CommonTitle>
-            <div className='w-4/6 mx-auto grid md:grid-cols-3 gap-6'>
+            <div className='w-5/6 mx-auto grid md:grid-cols-3 gap-6'>
                 {
+
                     parts?.map(part => <Part key={part._id}
                         part={part}
                     ></Part>)
+
                 }
             </div>
         </div>
